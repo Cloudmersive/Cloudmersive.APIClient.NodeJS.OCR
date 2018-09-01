@@ -25,7 +25,7 @@
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.ImageToTextResponse = factory(root.CloudmersiveOcrApiClient.ApiClient);
+    root.CloudmersiveOcrApiClient.OcrPageResult = factory(root.CloudmersiveOcrApiClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,15 +34,14 @@
 
 
   /**
-   * The ImageToTextResponse model module.
-   * @module model/ImageToTextResponse
+   * The OcrPageResult model module.
+   * @module model/OcrPageResult
    * @version 1.0.9
    */
 
   /**
-   * Constructs a new <code>ImageToTextResponse</code>.
-   * Response from an OCR to text operation.  Includes the confience rating and converted text result.
-   * @alias module:model/ImageToTextResponse
+   * Constructs a new <code>OcrPageResult</code>.
+   * @alias module:model/OcrPageResult
    * @class
    */
   var exports = function() {
@@ -50,19 +49,23 @@
 
 
 
+
   };
 
   /**
-   * Constructs a <code>ImageToTextResponse</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>OcrPageResult</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ImageToTextResponse} obj Optional instance to populate.
-   * @return {module:model/ImageToTextResponse} The populated <code>ImageToTextResponse</code> instance.
+   * @param {module:model/OcrPageResult} obj Optional instance to populate.
+   * @return {module:model/OcrPageResult} The populated <code>OcrPageResult</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('PageNumber')) {
+        obj['PageNumber'] = ApiClient.convertToType(data['PageNumber'], 'Number');
+      }
       if (data.hasOwnProperty('MeanConfidenceLevel')) {
         obj['MeanConfidenceLevel'] = ApiClient.convertToType(data['MeanConfidenceLevel'], 'Number');
       }
@@ -73,6 +76,11 @@
     return obj;
   }
 
+  /**
+   * Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file
+   * @member {Number} PageNumber
+   */
+  exports.prototype['PageNumber'] = undefined;
   /**
    * Confidence level rating of the OCR operation; ratings above 80% are strong.
    * @member {Number} MeanConfidenceLevel

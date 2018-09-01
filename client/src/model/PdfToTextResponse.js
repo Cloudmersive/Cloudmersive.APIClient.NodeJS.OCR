@@ -16,33 +16,33 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/OcrPageResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./OcrPageResult'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.ImageToTextResponse = factory(root.CloudmersiveOcrApiClient.ApiClient);
+    root.CloudmersiveOcrApiClient.PdfToTextResponse = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.OcrPageResult);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, OcrPageResult) {
   'use strict';
 
 
 
 
   /**
-   * The ImageToTextResponse model module.
-   * @module model/ImageToTextResponse
+   * The PdfToTextResponse model module.
+   * @module model/PdfToTextResponse
    * @version 1.0.9
    */
 
   /**
-   * Constructs a new <code>ImageToTextResponse</code>.
+   * Constructs a new <code>PdfToTextResponse</code>.
    * Response from an OCR to text operation.  Includes the confience rating and converted text result.
-   * @alias module:model/ImageToTextResponse
+   * @alias module:model/PdfToTextResponse
    * @class
    */
   var exports = function() {
@@ -53,36 +53,34 @@
   };
 
   /**
-   * Constructs a <code>ImageToTextResponse</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>PdfToTextResponse</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ImageToTextResponse} obj Optional instance to populate.
-   * @return {module:model/ImageToTextResponse} The populated <code>ImageToTextResponse</code> instance.
+   * @param {module:model/PdfToTextResponse} obj Optional instance to populate.
+   * @return {module:model/PdfToTextResponse} The populated <code>PdfToTextResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('MeanConfidenceLevel')) {
-        obj['MeanConfidenceLevel'] = ApiClient.convertToType(data['MeanConfidenceLevel'], 'Number');
+      if (data.hasOwnProperty('Successful')) {
+        obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
       }
-      if (data.hasOwnProperty('TextResult')) {
-        obj['TextResult'] = ApiClient.convertToType(data['TextResult'], 'String');
+      if (data.hasOwnProperty('OcrPages')) {
+        obj['OcrPages'] = ApiClient.convertToType(data['OcrPages'], [OcrPageResult]);
       }
     }
     return obj;
   }
 
   /**
-   * Confidence level rating of the OCR operation; ratings above 80% are strong.
-   * @member {Number} MeanConfidenceLevel
+   * @member {Boolean} Successful
    */
-  exports.prototype['MeanConfidenceLevel'] = undefined;
+  exports.prototype['Successful'] = undefined;
   /**
-   * Converted text string from the image input.
-   * @member {String} TextResult
+   * @member {Array.<module:model/OcrPageResult>} OcrPages
    */
-  exports.prototype['TextResult'] = undefined;
+  exports.prototype['OcrPages'] = undefined;
 
 
 

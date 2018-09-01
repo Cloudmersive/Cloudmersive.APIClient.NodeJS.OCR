@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ImageToTextResponse', 'api/ImageOcrApi'], factory);
+    define(['ApiClient', 'model/ImageToTextResponse', 'model/OcrPageResult', 'model/PdfToTextResponse', 'api/ImageOcrApi', 'api/PdfOcrApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ImageToTextResponse'), require('./api/ImageOcrApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ImageToTextResponse'), require('./model/OcrPageResult'), require('./model/PdfToTextResponse'), require('./api/ImageOcrApi'), require('./api/PdfOcrApi'));
   }
-}(function(ApiClient, ImageToTextResponse, ImageOcrApi) {
+}(function(ApiClient, ImageToTextResponse, OcrPageResult, PdfToTextResponse, ImageOcrApi, PdfOcrApi) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.0.8
+   * @version 1.0.9
    */
   var exports = {
     /**
@@ -67,10 +67,25 @@
      */
     ImageToTextResponse: ImageToTextResponse,
     /**
+     * The OcrPageResult model constructor.
+     * @property {module:model/OcrPageResult}
+     */
+    OcrPageResult: OcrPageResult,
+    /**
+     * The PdfToTextResponse model constructor.
+     * @property {module:model/PdfToTextResponse}
+     */
+    PdfToTextResponse: PdfToTextResponse,
+    /**
      * The ImageOcrApi service constructor.
      * @property {module:api/ImageOcrApi}
      */
-    ImageOcrApi: ImageOcrApi
+    ImageOcrApi: ImageOcrApi,
+    /**
+     * The PdfOcrApi service constructor.
+     * @property {module:api/PdfOcrApi}
+     */
+    PdfOcrApi: PdfOcrApi
   };
 
   return exports;
