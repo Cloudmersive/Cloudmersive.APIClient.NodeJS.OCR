@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveOcrApiClient.ImageOcrApi();
+    instance = new CloudmersiveOcrApiClient.PreprocessingApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,21 +49,21 @@
       object[property] = value;
   }
 
-  describe('ImageOcrApi', function() {
-    describe('imageOcrPhotoToText', function() {
-      it('should call imageOcrPhotoToText successfully', function(done) {
-        //uncomment below and update the code to test imageOcrPhotoToText
-        //instance.imageOcrPhotoToText(function(error) {
+  describe('PreprocessingApi', function() {
+    describe('preprocessingUnrotate', function() {
+      it('should call preprocessingUnrotate successfully', function(done) {
+        //uncomment below and update the code to test preprocessingUnrotate
+        //instance.preprocessingUnrotate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('imageOcrPost', function() {
-      it('should call imageOcrPost successfully', function(done) {
-        //uncomment below and update the code to test imageOcrPost
-        //instance.imageOcrPost(function(error) {
+    describe('preprocessingUnskew', function() {
+      it('should call preprocessingUnskew successfully', function(done) {
+        //uncomment below and update the code to test preprocessingUnskew
+        //instance.preprocessingUnskew(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ImageToTextResponse', 'model/OcrPageResult', 'model/PdfToTextResponse', 'api/ImageOcrApi', 'api/PdfOcrApi'], factory);
+    define(['ApiClient', 'model/ImageToTextResponse', 'model/OcrPageResult', 'model/PdfToTextResponse', 'api/ImageOcrApi', 'api/PdfOcrApi', 'api/PreprocessingApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ImageToTextResponse'), require('./model/OcrPageResult'), require('./model/PdfToTextResponse'), require('./api/ImageOcrApi'), require('./api/PdfOcrApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ImageToTextResponse'), require('./model/OcrPageResult'), require('./model/PdfToTextResponse'), require('./api/ImageOcrApi'), require('./api/PdfOcrApi'), require('./api/PreprocessingApi'));
   }
-}(function(ApiClient, ImageToTextResponse, OcrPageResult, PdfToTextResponse, ImageOcrApi, PdfOcrApi) {
+}(function(ApiClient, ImageToTextResponse, OcrPageResult, PdfToTextResponse, ImageOcrApi, PdfOcrApi, PreprocessingApi) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.0.9
+   * @version 1.1.1
    */
   var exports = {
     /**
@@ -85,7 +85,12 @@
      * The PdfOcrApi service constructor.
      * @property {module:api/PdfOcrApi}
      */
-    PdfOcrApi: PdfOcrApi
+    PdfOcrApi: PdfOcrApi,
+    /**
+     * The PreprocessingApi service constructor.
+     * @property {module:api/PreprocessingApi}
+     */
+    PreprocessingApi: PreprocessingApi
   };
 
   return exports;
