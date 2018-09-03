@@ -36,7 +36,7 @@
   /**
    * The PdfToTextResponse model module.
    * @module model/PdfToTextResponse
-   * @version 1.1.1
+   * @version 1.1.2
    */
 
   /**

@@ -33,7 +33,7 @@
   /**
    * Preprocessing service.
    * @module api/PreprocessingApi
-   * @version 1.1.1
+   * @version 1.1.2
    */
 
   /**
