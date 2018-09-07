@@ -50,6 +50,26 @@
   }
 
   describe('ImageOcrApi', function() {
+    describe('imageOcrImageLinesWithLocation', function() {
+      it('should call imageOcrImageLinesWithLocation successfully', function(done) {
+        //uncomment below and update the code to test imageOcrImageLinesWithLocation
+        //instance.imageOcrImageLinesWithLocation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('imageOcrImageWordsWithLocation', function() {
+      it('should call imageOcrImageWordsWithLocation successfully', function(done) {
+        //uncomment below and update the code to test imageOcrImageWordsWithLocation
+        //instance.imageOcrImageWordsWithLocation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('imageOcrPhotoToText', function() {
       it('should call imageOcrPhotoToText successfully', function(done) {
         //uncomment below and update the code to test imageOcrPhotoToText

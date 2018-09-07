@@ -16,33 +16,33 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/OcrPageResult'], factory);
+    define(['ApiClient', 'model/OcrLineElement'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./OcrPageResult'));
+    module.exports = factory(require('../ApiClient'), require('./OcrLineElement'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.PdfToTextResponse = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.OcrPageResult);
+    root.CloudmersiveOcrApiClient.ImageToLinesWithLocationResult = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.OcrLineElement);
   }
-}(this, function(ApiClient, OcrPageResult) {
+}(this, function(ApiClient, OcrLineElement) {
   'use strict';
 
 
 
 
   /**
-   * The PdfToTextResponse model module.
-   * @module model/PdfToTextResponse
+   * The ImageToLinesWithLocationResult model module.
+   * @module model/ImageToLinesWithLocationResult
    * @version 1.1.4
    */
 
   /**
-   * Constructs a new <code>PdfToTextResponse</code>.
-   * Response from an OCR to text operation.  Includes the confience rating and converted text result.
-   * @alias module:model/PdfToTextResponse
+   * Constructs a new <code>ImageToLinesWithLocationResult</code>.
+   * Result of an image to lines-with-location OCR operation
+   * @alias module:model/ImageToLinesWithLocationResult
    * @class
    */
   var exports = function() {
@@ -53,11 +53,11 @@
   };
 
   /**
-   * Constructs a <code>PdfToTextResponse</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ImageToLinesWithLocationResult</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/PdfToTextResponse} obj Optional instance to populate.
-   * @return {module:model/PdfToTextResponse} The populated <code>PdfToTextResponse</code> instance.
+   * @param {module:model/ImageToLinesWithLocationResult} obj Optional instance to populate.
+   * @return {module:model/ImageToLinesWithLocationResult} The populated <code>ImageToLinesWithLocationResult</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -66,8 +66,8 @@
       if (data.hasOwnProperty('Successful')) {
         obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
       }
-      if (data.hasOwnProperty('OcrPages')) {
-        obj['OcrPages'] = ApiClient.convertToType(data['OcrPages'], [OcrPageResult]);
+      if (data.hasOwnProperty('Lines')) {
+        obj['Lines'] = ApiClient.convertToType(data['Lines'], [OcrLineElement]);
       }
     }
     return obj;
@@ -78,9 +78,10 @@
    */
   exports.prototype['Successful'] = undefined;
   /**
-   * @member {Array.<module:model/OcrPageResult>} OcrPages
+   * Words in the image
+   * @member {Array.<module:model/OcrLineElement>} Lines
    */
-  exports.prototype['OcrPages'] = undefined;
+  exports.prototype['Lines'] = undefined;
 
 
 

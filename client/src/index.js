@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ImageToTextResponse', 'model/OcrPageResult', 'model/PdfToTextResponse', 'api/ImageOcrApi', 'api/PdfOcrApi', 'api/PreprocessingApi'], factory);
+    define(['ApiClient', 'model/ImageToLinesWithLocationResult', 'model/ImageToTextResponse', 'model/ImageToWordsWithLocationResult', 'model/OcrLineElement', 'model/OcrPageResult', 'model/OcrWordElement', 'model/PdfToTextResponse', 'api/ImageOcrApi', 'api/PdfOcrApi', 'api/PreprocessingApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ImageToTextResponse'), require('./model/OcrPageResult'), require('./model/PdfToTextResponse'), require('./api/ImageOcrApi'), require('./api/PdfOcrApi'), require('./api/PreprocessingApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ImageToLinesWithLocationResult'), require('./model/ImageToTextResponse'), require('./model/ImageToWordsWithLocationResult'), require('./model/OcrLineElement'), require('./model/OcrPageResult'), require('./model/OcrWordElement'), require('./model/PdfToTextResponse'), require('./api/ImageOcrApi'), require('./api/PdfOcrApi'), require('./api/PreprocessingApi'));
   }
-}(function(ApiClient, ImageToTextResponse, OcrPageResult, PdfToTextResponse, ImageOcrApi, PdfOcrApi, PreprocessingApi) {
+}(function(ApiClient, ImageToLinesWithLocationResult, ImageToTextResponse, ImageToWordsWithLocationResult, OcrLineElement, OcrPageResult, OcrWordElement, PdfToTextResponse, ImageOcrApi, PdfOcrApi, PreprocessingApi) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.1.3
+   * @version 1.1.4
    */
   var exports = {
     /**
@@ -62,15 +62,35 @@
      */
     ApiClient: ApiClient,
     /**
+     * The ImageToLinesWithLocationResult model constructor.
+     * @property {module:model/ImageToLinesWithLocationResult}
+     */
+    ImageToLinesWithLocationResult: ImageToLinesWithLocationResult,
+    /**
      * The ImageToTextResponse model constructor.
      * @property {module:model/ImageToTextResponse}
      */
     ImageToTextResponse: ImageToTextResponse,
     /**
+     * The ImageToWordsWithLocationResult model constructor.
+     * @property {module:model/ImageToWordsWithLocationResult}
+     */
+    ImageToWordsWithLocationResult: ImageToWordsWithLocationResult,
+    /**
+     * The OcrLineElement model constructor.
+     * @property {module:model/OcrLineElement}
+     */
+    OcrLineElement: OcrLineElement,
+    /**
      * The OcrPageResult model constructor.
      * @property {module:model/OcrPageResult}
      */
     OcrPageResult: OcrPageResult,
+    /**
+     * The OcrWordElement model constructor.
+     * @property {module:model/OcrWordElement}
+     */
+    OcrWordElement: OcrWordElement,
     /**
      * The PdfToTextResponse model constructor.
      * @property {module:model/PdfToTextResponse}

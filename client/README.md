@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api) provides advanced machine learning capabilities for converting scanned documents and photos of documents and receipts to text.
 
 - API version: v1
-- Package version: 1.1.3
+- Package version: 1.1.4
 
 
 ## Installation
@@ -118,7 +118,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.imageOcrPhotoToText(imageFile, opts, callback);
+api.imageOcrImageLinesWithLocation(imageFile, opts, callback);
 
 ```
 
@@ -128,6 +128,8 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrImageLinesWithLocation**](docs/ImageOcrApi.md#imageOcrImageLinesWithLocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
+*CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrImageWordsWithLocation**](docs/ImageOcrApi.md#imageOcrImageWordsWithLocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
 *CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrPhotoToText**](docs/ImageOcrApi.md#imageOcrPhotoToText) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrPost**](docs/ImageOcrApi.md#imageOcrPost) | **POST** /ocr/image/toText | Convert a scanned image into text
 *CloudmersiveOcrApiClient.PdfOcrApi* | [**pdfOcrPost**](docs/PdfOcrApi.md#pdfOcrPost) | **POST** /ocr/pdf/toText | Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
@@ -137,8 +139,12 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [CloudmersiveOcrApiClient.ImageToLinesWithLocationResult](docs/ImageToLinesWithLocationResult.md)
  - [CloudmersiveOcrApiClient.ImageToTextResponse](docs/ImageToTextResponse.md)
+ - [CloudmersiveOcrApiClient.ImageToWordsWithLocationResult](docs/ImageToWordsWithLocationResult.md)
+ - [CloudmersiveOcrApiClient.OcrLineElement](docs/OcrLineElement.md)
  - [CloudmersiveOcrApiClient.OcrPageResult](docs/OcrPageResult.md)
+ - [CloudmersiveOcrApiClient.OcrWordElement](docs/OcrWordElement.md)
  - [CloudmersiveOcrApiClient.PdfToTextResponse](docs/PdfToTextResponse.md)
 
 
