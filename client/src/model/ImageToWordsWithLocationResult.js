@@ -36,7 +36,7 @@
   /**
    * The ImageToWordsWithLocationResult model module.
    * @module model/ImageToWordsWithLocationResult
-   * @version 1.1.4
+   * @version 1.1.5
    */
 
   /**
@@ -78,6 +78,7 @@
    */
   exports.prototype['Successful'] = undefined;
   /**
+   * Word elements in the image
    * @member {Array.<module:model/OcrWordElement>} Words
    */
   exports.prototype['Words'] = undefined;

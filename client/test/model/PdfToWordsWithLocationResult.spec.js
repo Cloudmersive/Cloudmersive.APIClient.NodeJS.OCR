@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveOcrApiClient.PdfOcrApi();
+    instance = new CloudmersiveOcrApiClient.PdfToWordsWithLocationResult();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,37 +49,25 @@
       object[property] = value;
   }
 
-  describe('PdfOcrApi', function() {
-    describe('pdfOcrPdfToLinesWithLocation', function() {
-      it('should call pdfOcrPdfToLinesWithLocation successfully', function(done) {
-        //uncomment below and update the code to test pdfOcrPdfToLinesWithLocation
-        //instance.pdfOcrPdfToLinesWithLocation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('PdfToWordsWithLocationResult', function() {
+    it('should create an instance of PdfToWordsWithLocationResult', function() {
+      // uncomment below and update the code to test PdfToWordsWithLocationResult
+      //var instane = new CloudmersiveOcrApiClient.PdfToWordsWithLocationResult();
+      //expect(instance).to.be.a(CloudmersiveOcrApiClient.PdfToWordsWithLocationResult);
     });
-    describe('pdfOcrPdfToWordsWithLocation', function() {
-      it('should call pdfOcrPdfToWordsWithLocation successfully', function(done) {
-        //uncomment below and update the code to test pdfOcrPdfToWordsWithLocation
-        //instance.pdfOcrPdfToWordsWithLocation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property successful (base name: "Successful")', function() {
+      // uncomment below and update the code to test the property successful
+      //var instane = new CloudmersiveOcrApiClient.PdfToWordsWithLocationResult();
+      //expect(instance).to.be();
     });
-    describe('pdfOcrPost', function() {
-      it('should call pdfOcrPost successfully', function(done) {
-        //uncomment below and update the code to test pdfOcrPost
-        //instance.pdfOcrPost(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property ocrPages (base name: "OcrPages")', function() {
+      // uncomment below and update the code to test the property ocrPages
+      //var instane = new CloudmersiveOcrApiClient.PdfToWordsWithLocationResult();
+      //expect(instance).to.be();
     });
+
   });
 
 }));

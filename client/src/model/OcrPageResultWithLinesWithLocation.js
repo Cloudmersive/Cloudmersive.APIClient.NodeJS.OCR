@@ -25,7 +25,7 @@
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.ImageToLinesWithLocationResult = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.OcrLineElement);
+    root.CloudmersiveOcrApiClient.OcrPageResultWithLinesWithLocation = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.OcrLineElement);
   }
 }(this, function(ApiClient, OcrLineElement) {
   'use strict';
@@ -34,15 +34,15 @@
 
 
   /**
-   * The ImageToLinesWithLocationResult model module.
-   * @module model/ImageToLinesWithLocationResult
+   * The OcrPageResultWithLinesWithLocation model module.
+   * @module model/OcrPageResultWithLinesWithLocation
    * @version 1.1.5
    */
 
   /**
-   * Constructs a new <code>ImageToLinesWithLocationResult</code>.
-   * Result of an image to lines-with-location OCR operation
-   * @alias module:model/ImageToLinesWithLocationResult
+   * Constructs a new <code>OcrPageResultWithLinesWithLocation</code>.
+   * OCR results of a page, including lines of text and their location
+   * @alias module:model/OcrPageResultWithLinesWithLocation
    * @class
    */
   var exports = function() {
@@ -50,14 +50,15 @@
 
 
 
+
   };
 
   /**
-   * Constructs a <code>ImageToLinesWithLocationResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>OcrPageResultWithLinesWithLocation</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ImageToLinesWithLocationResult} obj Optional instance to populate.
-   * @return {module:model/ImageToLinesWithLocationResult} The populated <code>ImageToLinesWithLocationResult</code> instance.
+   * @param {module:model/OcrPageResultWithLinesWithLocation} obj Optional instance to populate.
+   * @return {module:model/OcrPageResultWithLinesWithLocation} The populated <code>OcrPageResultWithLinesWithLocation</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -65,6 +66,9 @@
 
       if (data.hasOwnProperty('Successful')) {
         obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
+      }
+      if (data.hasOwnProperty('PageNumber')) {
+        obj['PageNumber'] = ApiClient.convertToType(data['PageNumber'], 'Number');
       }
       if (data.hasOwnProperty('Lines')) {
         obj['Lines'] = ApiClient.convertToType(data['Lines'], [OcrLineElement]);
@@ -78,7 +82,12 @@
    */
   exports.prototype['Successful'] = undefined;
   /**
-   * Words in the image
+   * Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file
+   * @member {Number} PageNumber
+   */
+  exports.prototype['PageNumber'] = undefined;
+  /**
+   * Word elements in the image
    * @member {Array.<module:model/OcrLineElement>} Lines
    */
   exports.prototype['Lines'] = undefined;

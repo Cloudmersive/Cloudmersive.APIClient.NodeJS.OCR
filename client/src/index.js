@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ImageToLinesWithLocationResult', 'model/ImageToTextResponse', 'model/ImageToWordsWithLocationResult', 'model/OcrLineElement', 'model/OcrPageResult', 'model/OcrWordElement', 'model/PdfToTextResponse', 'api/ImageOcrApi', 'api/PdfOcrApi', 'api/PreprocessingApi'], factory);
+    define(['ApiClient', 'model/ImageToLinesWithLocationResult', 'model/ImageToTextResponse', 'model/ImageToWordsWithLocationResult', 'model/OcrLineElement', 'model/OcrPageResult', 'model/OcrPageResultWithLinesWithLocation', 'model/OcrPageResultWithWordsWithLocation', 'model/OcrWordElement', 'model/PdfToLinesWithLocationResult', 'model/PdfToTextResponse', 'model/PdfToWordsWithLocationResult', 'api/ImageOcrApi', 'api/PdfOcrApi', 'api/PreprocessingApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/ImageToLinesWithLocationResult'), require('./model/ImageToTextResponse'), require('./model/ImageToWordsWithLocationResult'), require('./model/OcrLineElement'), require('./model/OcrPageResult'), require('./model/OcrWordElement'), require('./model/PdfToTextResponse'), require('./api/ImageOcrApi'), require('./api/PdfOcrApi'), require('./api/PreprocessingApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/ImageToLinesWithLocationResult'), require('./model/ImageToTextResponse'), require('./model/ImageToWordsWithLocationResult'), require('./model/OcrLineElement'), require('./model/OcrPageResult'), require('./model/OcrPageResultWithLinesWithLocation'), require('./model/OcrPageResultWithWordsWithLocation'), require('./model/OcrWordElement'), require('./model/PdfToLinesWithLocationResult'), require('./model/PdfToTextResponse'), require('./model/PdfToWordsWithLocationResult'), require('./api/ImageOcrApi'), require('./api/PdfOcrApi'), require('./api/PreprocessingApi'));
   }
-}(function(ApiClient, ImageToLinesWithLocationResult, ImageToTextResponse, ImageToWordsWithLocationResult, OcrLineElement, OcrPageResult, OcrWordElement, PdfToTextResponse, ImageOcrApi, PdfOcrApi, PreprocessingApi) {
+}(function(ApiClient, ImageToLinesWithLocationResult, ImageToTextResponse, ImageToWordsWithLocationResult, OcrLineElement, OcrPageResult, OcrPageResultWithLinesWithLocation, OcrPageResultWithWordsWithLocation, OcrWordElement, PdfToLinesWithLocationResult, PdfToTextResponse, PdfToWordsWithLocationResult, ImageOcrApi, PdfOcrApi, PreprocessingApi) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.1.4
+   * @version 1.1.5
    */
   var exports = {
     /**
@@ -87,15 +87,35 @@
      */
     OcrPageResult: OcrPageResult,
     /**
+     * The OcrPageResultWithLinesWithLocation model constructor.
+     * @property {module:model/OcrPageResultWithLinesWithLocation}
+     */
+    OcrPageResultWithLinesWithLocation: OcrPageResultWithLinesWithLocation,
+    /**
+     * The OcrPageResultWithWordsWithLocation model constructor.
+     * @property {module:model/OcrPageResultWithWordsWithLocation}
+     */
+    OcrPageResultWithWordsWithLocation: OcrPageResultWithWordsWithLocation,
+    /**
      * The OcrWordElement model constructor.
      * @property {module:model/OcrWordElement}
      */
     OcrWordElement: OcrWordElement,
     /**
+     * The PdfToLinesWithLocationResult model constructor.
+     * @property {module:model/PdfToLinesWithLocationResult}
+     */
+    PdfToLinesWithLocationResult: PdfToLinesWithLocationResult,
+    /**
      * The PdfToTextResponse model constructor.
      * @property {module:model/PdfToTextResponse}
      */
     PdfToTextResponse: PdfToTextResponse,
+    /**
+     * The PdfToWordsWithLocationResult model constructor.
+     * @property {module:model/PdfToWordsWithLocationResult}
+     */
+    PdfToWordsWithLocationResult: PdfToWordsWithLocationResult,
     /**
      * The ImageOcrApi service constructor.
      * @property {module:api/ImageOcrApi}
