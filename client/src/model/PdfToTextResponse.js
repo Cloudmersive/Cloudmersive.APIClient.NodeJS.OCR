@@ -36,12 +36,12 @@
   /**
    * The PdfToTextResponse model module.
    * @module model/PdfToTextResponse
-   * @version 1.1.5
+   * @version 1.1.6
    */
 
   /**
    * Constructs a new <code>PdfToTextResponse</code>.
-   * Response from an OCR to text operation.  Includes the confience rating and converted text result.
+   * Response from an OCR to text operation.  Includes the confidence rating and converted text result.
    * @alias module:model/PdfToTextResponse
    * @class
    */

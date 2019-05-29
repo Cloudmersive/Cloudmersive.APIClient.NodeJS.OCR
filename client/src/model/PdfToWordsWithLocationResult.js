@@ -36,7 +36,7 @@
   /**
    * The PdfToWordsWithLocationResult model module.
    * @module model/PdfToWordsWithLocationResult
-   * @version 1.1.5
+   * @version 1.1.6
    */
 
   /**
