@@ -16,33 +16,33 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/OcrWordElement'], factory);
+    define(['ApiClient', 'model/OcrPhotoTextElement'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./OcrWordElement'));
+    module.exports = factory(require('../ApiClient'), require('./OcrPhotoTextElement'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.ImageToWordsWithLocationResult = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.OcrWordElement);
+    root.CloudmersiveOcrApiClient.PhotoToWordsWithLocationResult = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.OcrPhotoTextElement);
   }
-}(this, function(ApiClient, OcrWordElement) {
+}(this, function(ApiClient, OcrPhotoTextElement) {
   'use strict';
 
 
 
 
   /**
-   * The ImageToWordsWithLocationResult model module.
-   * @module model/ImageToWordsWithLocationResult
+   * The PhotoToWordsWithLocationResult model module.
+   * @module model/PhotoToWordsWithLocationResult
    * @version 1.1.7
    */
 
   /**
-   * Constructs a new <code>ImageToWordsWithLocationResult</code>.
-   * Result of an image to words-with-location OCR operation
-   * @alias module:model/ImageToWordsWithLocationResult
+   * Constructs a new <code>PhotoToWordsWithLocationResult</code>.
+   * Result of an photo to words-with-location OCR operation
+   * @alias module:model/PhotoToWordsWithLocationResult
    * @class
    */
   var exports = function() {
@@ -53,11 +53,11 @@
   };
 
   /**
-   * Constructs a <code>ImageToWordsWithLocationResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>PhotoToWordsWithLocationResult</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ImageToWordsWithLocationResult} obj Optional instance to populate.
-   * @return {module:model/ImageToWordsWithLocationResult} The populated <code>ImageToWordsWithLocationResult</code> instance.
+   * @param {module:model/PhotoToWordsWithLocationResult} obj Optional instance to populate.
+   * @return {module:model/PhotoToWordsWithLocationResult} The populated <code>PhotoToWordsWithLocationResult</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -66,8 +66,8 @@
       if (data.hasOwnProperty('Successful')) {
         obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
       }
-      if (data.hasOwnProperty('Words')) {
-        obj['Words'] = ApiClient.convertToType(data['Words'], [OcrWordElement]);
+      if (data.hasOwnProperty('TextElements')) {
+        obj['TextElements'] = ApiClient.convertToType(data['TextElements'], [OcrPhotoTextElement]);
       }
     }
     return obj;
@@ -79,9 +79,9 @@
   exports.prototype['Successful'] = undefined;
   /**
    * Word elements in the image
-   * @member {Array.<module:model/OcrWordElement>} Words
+   * @member {Array.<module:model/OcrPhotoTextElement>} TextElements
    */
-  exports.prototype['Words'] = undefined;
+  exports.prototype['TextElements'] = undefined;
 
 
 

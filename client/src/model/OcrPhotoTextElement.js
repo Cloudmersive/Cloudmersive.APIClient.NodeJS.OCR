@@ -25,7 +25,7 @@
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.OcrWordElement = factory(root.CloudmersiveOcrApiClient.ApiClient);
+    root.CloudmersiveOcrApiClient.OcrPhotoTextElement = factory(root.CloudmersiveOcrApiClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,15 +34,15 @@
 
 
   /**
-   * The OcrWordElement model module.
-   * @module model/OcrWordElement
+   * The OcrPhotoTextElement model module.
+   * @module model/OcrPhotoTextElement
    * @version 1.1.7
    */
 
   /**
-   * Constructs a new <code>OcrWordElement</code>.
-   * A single word in an OCR document
-   * @alias module:model/OcrWordElement
+   * Constructs a new <code>OcrPhotoTextElement</code>.
+   * A single text in an OCR document
+   * @alias module:model/OcrPhotoTextElement
    * @class
    */
   var exports = function() {
@@ -54,32 +54,21 @@
 
 
 
-
-
-
-
-
   };
 
   /**
-   * Constructs a <code>OcrWordElement</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>OcrPhotoTextElement</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/OcrWordElement} obj Optional instance to populate.
-   * @return {module:model/OcrWordElement} The populated <code>OcrWordElement</code> instance.
+   * @param {module:model/OcrPhotoTextElement} obj Optional instance to populate.
+   * @return {module:model/OcrPhotoTextElement} The populated <code>OcrPhotoTextElement</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('WordText')) {
-        obj['WordText'] = ApiClient.convertToType(data['WordText'], 'String');
-      }
-      if (data.hasOwnProperty('LineNumber')) {
-        obj['LineNumber'] = ApiClient.convertToType(data['LineNumber'], 'Number');
-      }
-      if (data.hasOwnProperty('WordNumber')) {
-        obj['WordNumber'] = ApiClient.convertToType(data['WordNumber'], 'Number');
+      if (data.hasOwnProperty('Text')) {
+        obj['Text'] = ApiClient.convertToType(data['Text'], 'String');
       }
       if (data.hasOwnProperty('XLeft')) {
         obj['XLeft'] = ApiClient.convertToType(data['XLeft'], 'Number');
@@ -96,34 +85,15 @@
       if (data.hasOwnProperty('ConfidenceLevel')) {
         obj['ConfidenceLevel'] = ApiClient.convertToType(data['ConfidenceLevel'], 'Number');
       }
-      if (data.hasOwnProperty('BlockNumber')) {
-        obj['BlockNumber'] = ApiClient.convertToType(data['BlockNumber'], 'Number');
-      }
-      if (data.hasOwnProperty('ParagraphNumber')) {
-        obj['ParagraphNumber'] = ApiClient.convertToType(data['ParagraphNumber'], 'Number');
-      }
-      if (data.hasOwnProperty('PageNumber')) {
-        obj['PageNumber'] = ApiClient.convertToType(data['PageNumber'], 'Number');
-      }
     }
     return obj;
   }
 
   /**
    * Text of the word
-   * @member {String} WordText
+   * @member {String} Text
    */
-  exports.prototype['WordText'] = undefined;
-  /**
-   * Line number of the word
-   * @member {Number} LineNumber
-   */
-  exports.prototype['LineNumber'] = undefined;
-  /**
-   * Index of the word in the line
-   * @member {Number} WordNumber
-   */
-  exports.prototype['WordNumber'] = undefined;
+  exports.prototype['Text'] = undefined;
   /**
    * X location of the left edge of the word in pixels
    * @member {Number} XLeft
@@ -149,21 +119,6 @@
    * @member {Number} ConfidenceLevel
    */
   exports.prototype['ConfidenceLevel'] = undefined;
-  /**
-   * Index of the containing block
-   * @member {Number} BlockNumber
-   */
-  exports.prototype['BlockNumber'] = undefined;
-  /**
-   * Index of the containing paragraph
-   * @member {Number} ParagraphNumber
-   */
-  exports.prototype['ParagraphNumber'] = undefined;
-  /**
-   * Index of the containing page
-   * @member {Number} PageNumber
-   */
-  exports.prototype['PageNumber'] = undefined;
 
 
 

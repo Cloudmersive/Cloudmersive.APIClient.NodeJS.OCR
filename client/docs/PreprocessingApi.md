@@ -4,9 +4,63 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**preprocessingBinarize**](PreprocessingApi.md#preprocessingBinarize) | **POST** /ocr/preprocessing/image/binarize | Convert an image of text into a binary (light and dark) view
 [**preprocessingUnrotate**](PreprocessingApi.md#preprocessingUnrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
 [**preprocessingUnskew**](PreprocessingApi.md#preprocessingUnskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
 
+
+<a name="preprocessingBinarize"></a>
+# **preprocessingBinarize**
+> Object preprocessingBinarize(imageFile)
+
+Convert an image of text into a binary (light and dark) view
+
+Perform an advanced adaptive, machine learning-based binarization algorithm on the input image to prepare it for further OCR operations.
+
+### Example
+```javascript
+var CloudmersiveOcrApiClient = require('cloudmersive-ocr-api-client');
+var defaultClient = CloudmersiveOcrApiClient.ApiClient.instance;
+
+// Configure API key authorization: Apikey
+var Apikey = defaultClient.authentications['Apikey'];
+Apikey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Apikey.apiKeyPrefix = 'Token';
+
+var apiInstance = new CloudmersiveOcrApiClient.PreprocessingApi();
+
+var imageFile = "/path/to/file.txt"; // File | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.preprocessingBinarize(imageFile, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **imageFile** | **File**| Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
 
 <a name="preprocessingUnrotate"></a>
 # **preprocessingUnrotate**

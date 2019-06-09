@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveOcrApiClient.OcrWordElement();
+    instance = new CloudmersiveOcrApiClient.OcrPhotoTextElement();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,76 +49,46 @@
       object[property] = value;
   }
 
-  describe('OcrWordElement', function() {
-    it('should create an instance of OcrWordElement', function() {
-      // uncomment below and update the code to test OcrWordElement
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
-      //expect(instance).to.be.a(CloudmersiveOcrApiClient.OcrWordElement);
+  describe('OcrPhotoTextElement', function() {
+    it('should create an instance of OcrPhotoTextElement', function() {
+      // uncomment below and update the code to test OcrPhotoTextElement
+      //var instane = new CloudmersiveOcrApiClient.OcrPhotoTextElement();
+      //expect(instance).to.be.a(CloudmersiveOcrApiClient.OcrPhotoTextElement);
     });
 
-    it('should have the property wordText (base name: "WordText")', function() {
-      // uncomment below and update the code to test the property wordText
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property lineNumber (base name: "LineNumber")', function() {
-      // uncomment below and update the code to test the property lineNumber
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property wordNumber (base name: "WordNumber")', function() {
-      // uncomment below and update the code to test the property wordNumber
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
+    it('should have the property text (base name: "Text")', function() {
+      // uncomment below and update the code to test the property text
+      //var instane = new CloudmersiveOcrApiClient.OcrPhotoTextElement();
       //expect(instance).to.be();
     });
 
     it('should have the property xLeft (base name: "XLeft")', function() {
       // uncomment below and update the code to test the property xLeft
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
+      //var instane = new CloudmersiveOcrApiClient.OcrPhotoTextElement();
       //expect(instance).to.be();
     });
 
     it('should have the property yTop (base name: "YTop")', function() {
       // uncomment below and update the code to test the property yTop
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
+      //var instane = new CloudmersiveOcrApiClient.OcrPhotoTextElement();
       //expect(instance).to.be();
     });
 
     it('should have the property width (base name: "Width")', function() {
       // uncomment below and update the code to test the property width
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
+      //var instane = new CloudmersiveOcrApiClient.OcrPhotoTextElement();
       //expect(instance).to.be();
     });
 
     it('should have the property height (base name: "Height")', function() {
       // uncomment below and update the code to test the property height
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
+      //var instane = new CloudmersiveOcrApiClient.OcrPhotoTextElement();
       //expect(instance).to.be();
     });
 
     it('should have the property confidenceLevel (base name: "ConfidenceLevel")', function() {
       // uncomment below and update the code to test the property confidenceLevel
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property blockNumber (base name: "BlockNumber")', function() {
-      // uncomment below and update the code to test the property blockNumber
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property paragraphNumber (base name: "ParagraphNumber")', function() {
-      // uncomment below and update the code to test the property paragraphNumber
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property pageNumber (base name: "PageNumber")', function() {
-      // uncomment below and update the code to test the property pageNumber
-      //var instane = new CloudmersiveOcrApiClient.OcrWordElement();
+      //var instane = new CloudmersiveOcrApiClient.OcrPhotoTextElement();
       //expect(instance).to.be();
     });
 
