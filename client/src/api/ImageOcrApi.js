@@ -33,7 +33,7 @@
   /**
    * ImageOcr service.
    * @module api/ImageOcrApi
-   * @version 1.1.8
+   * @version 1.1.9
    */
 
   /**

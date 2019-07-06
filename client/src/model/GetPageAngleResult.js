@@ -36,7 +36,7 @@
   /**
    * The GetPageAngleResult model module.
    * @module model/GetPageAngleResult
-   * @version 1.1.8
+   * @version 1.1.9
    */
 
   /**

@@ -36,7 +36,7 @@
   /**
    * The OcrPageResult model module.
    * @module model/OcrPageResult
-   * @version 1.1.8
+   * @version 1.1.9
    */
 
   /**

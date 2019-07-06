@@ -33,7 +33,7 @@
   /**
    * Preprocessing service.
    * @module api/PreprocessingApi
-   * @version 1.1.8
+   * @version 1.1.9
    */
 
   /**
@@ -51,7 +51,7 @@
      * Callback function to receive the result of the preprocessingBinarize operation.
      * @callback module:api/PreprocessingApi~preprocessingBinarizeCallback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {'Blob'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -60,7 +60,7 @@
      * Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.
      * @param {File} imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
      * @param {module:api/PreprocessingApi~preprocessingBinarizeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * data is of type: {@link 'Blob'}
      */
     this.preprocessingBinarize = function(imageFile, callback) {
       var postBody = null;
@@ -86,7 +86,7 @@
       var authNames = ['Apikey'];
       var contentTypes = ['multipart/form-data'];
       var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
-      var returnType = Object;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
         '/ocr/preprocessing/image/binarize', 'POST',
@@ -99,7 +99,7 @@
      * Callback function to receive the result of the preprocessingBinarizeAdvanced operation.
      * @callback module:api/PreprocessingApi~preprocessingBinarizeAdvancedCallback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {'Blob'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -108,7 +108,7 @@
      * Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.  Provides enhanced accuracy than adaptive binarization.  Image will be upsampled to 300 DPI if it has a DPI below 300.
      * @param {File} imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
      * @param {module:api/PreprocessingApi~preprocessingBinarizeAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * data is of type: {@link 'Blob'}
      */
     this.preprocessingBinarizeAdvanced = function(imageFile, callback) {
       var postBody = null;
@@ -134,7 +134,7 @@
       var authNames = ['Apikey'];
       var contentTypes = ['multipart/form-data'];
       var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
-      var returnType = Object;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
         '/ocr/preprocessing/image/binarize/advanced', 'POST',
@@ -195,7 +195,7 @@
      * Callback function to receive the result of the preprocessingUnrotate operation.
      * @callback module:api/PreprocessingApi~preprocessingUnrotateCallback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {'Blob'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -204,7 +204,7 @@
      * Detect and unrotate an image of a document (e.g. that was scanned at an angle).  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
      * @param {File} imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
      * @param {module:api/PreprocessingApi~preprocessingUnrotateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * data is of type: {@link 'Blob'}
      */
     this.preprocessingUnrotate = function(imageFile, callback) {
       var postBody = null;
@@ -230,7 +230,7 @@
       var authNames = ['Apikey'];
       var contentTypes = ['multipart/form-data'];
       var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
-      var returnType = Object;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
         '/ocr/preprocessing/image/unrotate', 'POST',
@@ -243,7 +243,7 @@
      * Callback function to receive the result of the preprocessingUnskew operation.
      * @callback module:api/PreprocessingApi~preprocessingUnskewCallback
      * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
+     * @param {'Blob'} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -252,7 +252,7 @@
      * Detect and unskew a photo of a document (e.g. taken on a cell phone) into a perfectly square image.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
      * @param {File} imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
      * @param {module:api/PreprocessingApi~preprocessingUnskewCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * data is of type: {@link 'Blob'}
      */
     this.preprocessingUnskew = function(imageFile, callback) {
       var postBody = null;
@@ -278,7 +278,7 @@
       var authNames = ['Apikey'];
       var contentTypes = ['multipart/form-data'];
       var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
-      var returnType = Object;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
         '/ocr/preprocessing/image/unskew', 'POST',

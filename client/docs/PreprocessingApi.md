@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="preprocessingBinarize"></a>
 # **preprocessingBinarize**
-> Object preprocessingBinarize(imageFile)
+> &#39;Blob&#39; preprocessingBinarize(imageFile)
 
 Convert an image of text into a binarized (light and dark) view
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 <a name="preprocessingBinarizeAdvanced"></a>
 # **preprocessingBinarizeAdvanced**
-> Object preprocessingBinarizeAdvanced(imageFile)
+> &#39;Blob&#39; preprocessingBinarizeAdvanced(imageFile)
 
 Convert an image of text into a binary (light and dark) view with ML
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 <a name="preprocessingUnrotate"></a>
 # **preprocessingUnrotate**
-> Object preprocessingUnrotate(imageFile)
+> &#39;Blob&#39; preprocessingUnrotate(imageFile)
 
 Detect and unrotate a document image
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 <a name="preprocessingUnskew"></a>
 # **preprocessingUnskew**
-> Object preprocessingUnskew(imageFile)
+> &#39;Blob&#39; preprocessingUnskew(imageFile)
 
 Detect and unskew a photo of a document
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**&#39;Blob&#39;**
 
 ### Authorization
 

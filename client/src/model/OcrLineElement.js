@@ -36,7 +36,7 @@
   /**
    * The OcrLineElement model module.
    * @module model/OcrLineElement
-   * @version 1.1.8
+   * @version 1.1.9
    */
 
   /**
