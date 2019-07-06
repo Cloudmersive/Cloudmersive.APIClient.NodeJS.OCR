@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api) provides advanced machine learning capabilities for converting scanned documents and photos of documents and receipts to text.
 
 - API version: v1
-- Package version: 1.1.7
+- Package version: 1.1.8
 
 
 ## Installation
@@ -137,13 +137,17 @@ Class | Method | HTTP request | Description
 *CloudmersiveOcrApiClient.PdfOcrApi* | [**pdfOcrPdfToLinesWithLocation**](docs/PdfOcrApi.md#pdfOcrPdfToLinesWithLocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 *CloudmersiveOcrApiClient.PdfOcrApi* | [**pdfOcrPdfToWordsWithLocation**](docs/PdfOcrApi.md#pdfOcrPdfToWordsWithLocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
 *CloudmersiveOcrApiClient.PdfOcrApi* | [**pdfOcrPost**](docs/PdfOcrApi.md#pdfOcrPost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.
-*CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingBinarize**](docs/PreprocessingApi.md#preprocessingBinarize) | **POST** /ocr/preprocessing/image/binarize | Convert an image of text into a binary (light and dark) view
+*CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingBinarize**](docs/PreprocessingApi.md#preprocessingBinarize) | **POST** /ocr/preprocessing/image/binarize | Convert an image of text into a binarized (light and dark) view
+*CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingBinarizeAdvanced**](docs/PreprocessingApi.md#preprocessingBinarizeAdvanced) | **POST** /ocr/preprocessing/image/binarize/advanced | Convert an image of text into a binary (light and dark) view with ML
+*CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingGetPageAngle**](docs/PreprocessingApi.md#preprocessingGetPageAngle) | **POST** /ocr/preprocessing/image/get-page-angle | Get the angle of the page / document / receipt
 *CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingUnrotate**](docs/PreprocessingApi.md#preprocessingUnrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
 *CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingUnskew**](docs/PreprocessingApi.md#preprocessingUnskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
+*CloudmersiveOcrApiClient.ReceiptsApi* | [**receiptsPhotoToCSV**](docs/ReceiptsApi.md#receiptsPhotoToCSV) | **POST** /ocr/receipts/photo/to/csv | Convert a photo of a receipt into a CSV file containing structured information from the receipt
 
 
 ## Documentation for Models
 
+ - [CloudmersiveOcrApiClient.GetPageAngleResult](docs/GetPageAngleResult.md)
  - [CloudmersiveOcrApiClient.ImageToLinesWithLocationResult](docs/ImageToLinesWithLocationResult.md)
  - [CloudmersiveOcrApiClient.ImageToTextResponse](docs/ImageToTextResponse.md)
  - [CloudmersiveOcrApiClient.ImageToWordsWithLocationResult](docs/ImageToWordsWithLocationResult.md)

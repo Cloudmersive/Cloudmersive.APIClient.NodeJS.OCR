@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveOcrApiClient.ImageToTextResponse();
+    instance = new CloudmersiveOcrApiClient.GetPageAngleResult();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,22 +49,22 @@
       object[property] = value;
   }
 
-  describe('ImageToTextResponse', function() {
-    it('should create an instance of ImageToTextResponse', function() {
-      // uncomment below and update the code to test ImageToTextResponse
-      //var instane = new CloudmersiveOcrApiClient.ImageToTextResponse();
-      //expect(instance).to.be.a(CloudmersiveOcrApiClient.ImageToTextResponse);
+  describe('GetPageAngleResult', function() {
+    it('should create an instance of GetPageAngleResult', function() {
+      // uncomment below and update the code to test GetPageAngleResult
+      //var instane = new CloudmersiveOcrApiClient.GetPageAngleResult();
+      //expect(instance).to.be.a(CloudmersiveOcrApiClient.GetPageAngleResult);
     });
 
-    it('should have the property meanConfidenceLevel (base name: "MeanConfidenceLevel")', function() {
-      // uncomment below and update the code to test the property meanConfidenceLevel
-      //var instane = new CloudmersiveOcrApiClient.ImageToTextResponse();
+    it('should have the property successful (base name: "Successful")', function() {
+      // uncomment below and update the code to test the property successful
+      //var instane = new CloudmersiveOcrApiClient.GetPageAngleResult();
       //expect(instance).to.be();
     });
 
-    it('should have the property textResult (base name: "TextResult")', function() {
-      // uncomment below and update the code to test the property textResult
-      //var instane = new CloudmersiveOcrApiClient.ImageToTextResponse();
+    it('should have the property angle (base name: "Angle")', function() {
+      // uncomment below and update the code to test the property angle
+      //var instane = new CloudmersiveOcrApiClient.GetPageAngleResult();
       //expect(instance).to.be();
     });
 

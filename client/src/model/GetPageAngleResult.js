@@ -16,33 +16,33 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/OcrWordElement'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./OcrWordElement'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.OcrLineElement = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.OcrWordElement);
+    root.CloudmersiveOcrApiClient.GetPageAngleResult = factory(root.CloudmersiveOcrApiClient.ApiClient);
   }
-}(this, function(ApiClient, OcrWordElement) {
+}(this, function(ApiClient) {
   'use strict';
 
 
 
 
   /**
-   * The OcrLineElement model module.
-   * @module model/OcrLineElement
+   * The GetPageAngleResult model module.
+   * @module model/GetPageAngleResult
    * @version 1.1.8
    */
 
   /**
-   * Constructs a new <code>OcrLineElement</code>.
-   * A contiguous line of text in an OCR document
-   * @alias module:model/OcrLineElement
+   * Constructs a new <code>GetPageAngleResult</code>.
+   * Result of performing a get-page-angle operation
+   * @alias module:model/GetPageAngleResult
    * @class
    */
   var exports = function() {
@@ -53,36 +53,36 @@
   };
 
   /**
-   * Constructs a <code>OcrLineElement</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>GetPageAngleResult</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/OcrLineElement} obj Optional instance to populate.
-   * @return {module:model/OcrLineElement} The populated <code>OcrLineElement</code> instance.
+   * @param {module:model/GetPageAngleResult} obj Optional instance to populate.
+   * @return {module:model/GetPageAngleResult} The populated <code>GetPageAngleResult</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('LineText')) {
-        obj['LineText'] = ApiClient.convertToType(data['LineText'], 'String');
+      if (data.hasOwnProperty('Successful')) {
+        obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
       }
-      if (data.hasOwnProperty('Words')) {
-        obj['Words'] = ApiClient.convertToType(data['Words'], [OcrWordElement]);
+      if (data.hasOwnProperty('Angle')) {
+        obj['Angle'] = ApiClient.convertToType(data['Angle'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * Text of the line
-   * @member {String} LineText
+   * True if the operation was successful, false otherwise
+   * @member {Boolean} Successful
    */
-  exports.prototype['LineText'] = undefined;
+  exports.prototype['Successful'] = undefined;
   /**
-   * Word objects in the line
-   * @member {Array.<module:model/OcrWordElement>} Words
+   * Angle of the page in radians; 0 represents perfectly horizontal
+   * @member {Number} Angle
    */
-  exports.prototype['Words'] = undefined;
+  exports.prototype['Angle'] = undefined;
 
 
 

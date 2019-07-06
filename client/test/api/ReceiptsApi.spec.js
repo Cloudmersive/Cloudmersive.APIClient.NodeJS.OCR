@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveOcrApiClient.ImageToTextResponse();
+    instance = new CloudmersiveOcrApiClient.ReceiptsApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,25 +49,17 @@
       object[property] = value;
   }
 
-  describe('ImageToTextResponse', function() {
-    it('should create an instance of ImageToTextResponse', function() {
-      // uncomment below and update the code to test ImageToTextResponse
-      //var instane = new CloudmersiveOcrApiClient.ImageToTextResponse();
-      //expect(instance).to.be.a(CloudmersiveOcrApiClient.ImageToTextResponse);
+  describe('ReceiptsApi', function() {
+    describe('receiptsPhotoToCSV', function() {
+      it('should call receiptsPhotoToCSV successfully', function(done) {
+        //uncomment below and update the code to test receiptsPhotoToCSV
+        //instance.receiptsPhotoToCSV(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
-    it('should have the property meanConfidenceLevel (base name: "MeanConfidenceLevel")', function() {
-      // uncomment below and update the code to test the property meanConfidenceLevel
-      //var instane = new CloudmersiveOcrApiClient.ImageToTextResponse();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property textResult (base name: "TextResult")', function() {
-      // uncomment below and update the code to test the property textResult
-      //var instane = new CloudmersiveOcrApiClient.ImageToTextResponse();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));
