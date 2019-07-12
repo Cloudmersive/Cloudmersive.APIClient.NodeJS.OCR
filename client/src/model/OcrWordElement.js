@@ -36,7 +36,7 @@
   /**
    * The OcrWordElement model module.
    * @module model/OcrWordElement
-   * @version 1.1.9
+   * @version 1.2.0
    */
 
   /**

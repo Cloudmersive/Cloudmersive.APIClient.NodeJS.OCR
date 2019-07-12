@@ -1,6 +1,6 @@
 {
   "name": "cloudmersive-ocr-api-client",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "The_powerful_Optical_Character_Recognition__OCR_APIs_let_you_convert_scanned_images_of_pages_into_recognized_text_",
   "license": "Unlicense",
   "main": "src/index.js",

@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property diagnosticImage (base name: "DiagnosticImage")', function() {
+      // uncomment below and update the code to test the property diagnosticImage
+      //var instane = new CloudmersiveOcrApiClient.PhotoToWordsWithLocationResult();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

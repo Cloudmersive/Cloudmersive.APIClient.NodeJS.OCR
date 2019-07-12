@@ -36,7 +36,7 @@
   /**
    * The PhotoToWordsWithLocationResult model module.
    * @module model/PhotoToWordsWithLocationResult
-   * @version 1.1.9
+   * @version 1.2.0
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -69,6 +70,9 @@
       if (data.hasOwnProperty('TextElements')) {
         obj['TextElements'] = ApiClient.convertToType(data['TextElements'], [OcrPhotoTextElement]);
       }
+      if (data.hasOwnProperty('DiagnosticImage')) {
+        obj['DiagnosticImage'] = ApiClient.convertToType(data['DiagnosticImage'], 'Blob');
+      }
     }
     return obj;
   }
@@ -82,6 +86,11 @@
    * @member {Array.<module:model/OcrPhotoTextElement>} TextElements
    */
   exports.prototype['TextElements'] = undefined;
+  /**
+   * Typically null.  To analyze OCR performance, enable diagnostic mode by adding the HTTP header \"DiagnosticMode\" with the value \"true\".  When this is true, a diagnostic image showing the details of the OCR result will be set in PNG format into DiagnosticImage.
+   * @member {Blob} DiagnosticImage
+   */
+  exports.prototype['DiagnosticImage'] = undefined;
 
 
 

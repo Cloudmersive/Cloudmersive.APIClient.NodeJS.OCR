@@ -36,7 +36,7 @@
   /**
    * The OcrPageResultWithLinesWithLocation model module.
    * @module model/OcrPageResultWithLinesWithLocation
-   * @version 1.1.9
+   * @version 1.2.0
    */
 
   /**

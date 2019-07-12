@@ -36,7 +36,7 @@
   /**
    * The ImageToLinesWithLocationResult model module.
    * @module model/ImageToLinesWithLocationResult
-   * @version 1.1.9
+   * @version 1.2.0
    */
 
   /**
