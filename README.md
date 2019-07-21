@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api) provides advanced machine learning capabilities for converting scanned documents and photos of documents and receipts to text.
 
 - API version: v1
-- Package version: 1.2.0
+- Package version: 1.2.1
 
 
 ## Installation
@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrImageLinesWithLocation**](docs/ImageOcrApi.md#imageOcrImageLinesWithLocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 *CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrImageWordsWithLocation**](docs/ImageOcrApi.md#imageOcrImageWordsWithLocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
+*CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrPhotoRecognizeReceipt**](docs/ImageOcrApi.md#imageOcrPhotoRecognizeReceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 *CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrPhotoToText**](docs/ImageOcrApi.md#imageOcrPhotoToText) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrPhotoWordsWithLocation**](docs/ImageOcrApi.md#imageOcrPhotoWordsWithLocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
 *CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrPost**](docs/ImageOcrApi.md#imageOcrPost) | **POST** /ocr/image/toText | Convert a scanned image into text
@@ -161,6 +162,7 @@ Class | Method | HTTP request | Description
  - [CloudmersiveOcrApiClient.PdfToTextResponse](docs/PdfToTextResponse.md)
  - [CloudmersiveOcrApiClient.PdfToWordsWithLocationResult](docs/PdfToWordsWithLocationResult.md)
  - [CloudmersiveOcrApiClient.PhotoToWordsWithLocationResult](docs/PhotoToWordsWithLocationResult.md)
+ - [CloudmersiveOcrApiClient.ReceiptRecognitionResult](docs/ReceiptRecognitionResult.md)
 
 
 ## Documentation for Authorization

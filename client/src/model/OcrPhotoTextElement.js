@@ -36,7 +36,7 @@
   /**
    * The OcrPhotoTextElement model module.
    * @module model/OcrPhotoTextElement
-   * @version 1.2.0
+   * @version 1.2.1
    */
 
   /**
