@@ -25,7 +25,7 @@
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.ReceiptRecognitionResult = factory(root.CloudmersiveOcrApiClient.ApiClient);
+    root.CloudmersiveOcrApiClient.BusinessCardRecognitionResult = factory(root.CloudmersiveOcrApiClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,15 +34,15 @@
 
 
   /**
-   * The ReceiptRecognitionResult model module.
-   * @module model/ReceiptRecognitionResult
+   * The BusinessCardRecognitionResult model module.
+   * @module model/BusinessCardRecognitionResult
    * @version 1.2.2
    */
 
   /**
-   * Constructs a new <code>ReceiptRecognitionResult</code>.
-   * Result of recognizing a receipt, to extract the key information from the receipt
-   * @alias module:model/ReceiptRecognitionResult
+   * Constructs a new <code>BusinessCardRecognitionResult</code>.
+   * Result of recognizing a business card, to extract the key information from the business card
+   * @alias module:model/BusinessCardRecognitionResult
    * @class
    */
   var exports = function() {
@@ -54,14 +54,16 @@
 
 
 
+
+
   };
 
   /**
-   * Constructs a <code>ReceiptRecognitionResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>BusinessCardRecognitionResult</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ReceiptRecognitionResult} obj Optional instance to populate.
-   * @return {module:model/ReceiptRecognitionResult} The populated <code>ReceiptRecognitionResult</code> instance.
+   * @param {module:model/BusinessCardRecognitionResult} obj Optional instance to populate.
+   * @return {module:model/BusinessCardRecognitionResult} The populated <code>BusinessCardRecognitionResult</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -70,8 +72,11 @@
       if (data.hasOwnProperty('Successful')) {
         obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
       }
-      if (data.hasOwnProperty('Timestamp')) {
-        obj['Timestamp'] = ApiClient.convertToType(data['Timestamp'], 'Date');
+      if (data.hasOwnProperty('PersonName')) {
+        obj['PersonName'] = ApiClient.convertToType(data['PersonName'], 'String');
+      }
+      if (data.hasOwnProperty('PersonTitle')) {
+        obj['PersonTitle'] = ApiClient.convertToType(data['PersonTitle'], 'String');
       }
       if (data.hasOwnProperty('BusinessName')) {
         obj['BusinessName'] = ApiClient.convertToType(data['BusinessName'], 'String');
@@ -82,8 +87,11 @@
       if (data.hasOwnProperty('PhoneNumber')) {
         obj['PhoneNumber'] = ApiClient.convertToType(data['PhoneNumber'], 'String');
       }
-      if (data.hasOwnProperty('ReceiptTotal')) {
-        obj['ReceiptTotal'] = ApiClient.convertToType(data['ReceiptTotal'], 'Number');
+      if (data.hasOwnProperty('EmailAddress')) {
+        obj['EmailAddress'] = ApiClient.convertToType(data['EmailAddress'], 'String');
+      }
+      if (data.hasOwnProperty('Timestamp')) {
+        obj['Timestamp'] = ApiClient.convertToType(data['Timestamp'], 'Date');
       }
     }
     return obj;
@@ -94,9 +102,13 @@
    */
   exports.prototype['Successful'] = undefined;
   /**
-   * @member {Date} Timestamp
+   * @member {String} PersonName
    */
-  exports.prototype['Timestamp'] = undefined;
+  exports.prototype['PersonName'] = undefined;
+  /**
+   * @member {String} PersonTitle
+   */
+  exports.prototype['PersonTitle'] = undefined;
   /**
    * @member {String} BusinessName
    */
@@ -110,9 +122,13 @@
    */
   exports.prototype['PhoneNumber'] = undefined;
   /**
-   * @member {Number} ReceiptTotal
+   * @member {String} EmailAddress
    */
-  exports.prototype['ReceiptTotal'] = undefined;
+  exports.prototype['EmailAddress'] = undefined;
+  /**
+   * @member {Date} Timestamp
+   */
+  exports.prototype['Timestamp'] = undefined;
 
 
 

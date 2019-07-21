@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**imageOcrImageLinesWithLocation**](ImageOcrApi.md#imageOcrImageLinesWithLocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 [**imageOcrImageWordsWithLocation**](ImageOcrApi.md#imageOcrImageWordsWithLocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
+[**imageOcrPhotoRecognizeBusinessCard**](ImageOcrApi.md#imageOcrPhotoRecognizeBusinessCard) | **POST** /ocr/photo/recognize/business-card | Recognize a photo of a business card, extract key business information
 [**imageOcrPhotoRecognizeReceipt**](ImageOcrApi.md#imageOcrPhotoRecognizeReceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 [**imageOcrPhotoToText**](ImageOcrApi.md#imageOcrPhotoToText) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 [**imageOcrPhotoWordsWithLocation**](ImageOcrApi.md#imageOcrPhotoWordsWithLocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
@@ -120,6 +121,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ImageToWordsWithLocationResult**](ImageToWordsWithLocationResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+<a name="imageOcrPhotoRecognizeBusinessCard"></a>
+# **imageOcrPhotoRecognizeBusinessCard**
+> BusinessCardRecognitionResult imageOcrPhotoRecognizeBusinessCard(imageFile)
+
+Recognize a photo of a business card, extract key business information
+
+Analyzes a photograph of a business card as input, and outputs key business information such as the name of the person, name of the business, the address of the business, the phone number, the email address and more.
+
+### Example
+```javascript
+var CloudmersiveOcrApiClient = require('cloudmersive-ocr-api-client');
+var defaultClient = CloudmersiveOcrApiClient.ApiClient.instance;
+
+// Configure API key authorization: Apikey
+var Apikey = defaultClient.authentications['Apikey'];
+Apikey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Apikey.apiKeyPrefix = 'Token';
+
+var apiInstance = new CloudmersiveOcrApiClient.ImageOcrApi();
+
+var imageFile = "/path/to/file.txt"; // File | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.imageOcrPhotoRecognizeBusinessCard(imageFile, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **imageFile** | **File**| Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. | 
+
+### Return type
+
+[**BusinessCardRecognitionResult**](BusinessCardRecognitionResult.md)
 
 ### Authorization
 

@@ -70,6 +70,16 @@
         done();
       });
     });
+    describe('imageOcrPhotoRecognizeBusinessCard', function() {
+      it('should call imageOcrPhotoRecognizeBusinessCard successfully', function(done) {
+        //uncomment below and update the code to test imageOcrPhotoRecognizeBusinessCard
+        //instance.imageOcrPhotoRecognizeBusinessCard(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('imageOcrPhotoRecognizeReceipt', function() {
       it('should call imageOcrPhotoRecognizeReceipt successfully', function(done) {
         //uncomment below and update the code to test imageOcrPhotoRecognizeReceipt

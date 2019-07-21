@@ -16,24 +16,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ImageToLinesWithLocationResult', 'model/ImageToTextResponse', 'model/ImageToWordsWithLocationResult', 'model/PhotoToWordsWithLocationResult', 'model/ReceiptRecognitionResult'], factory);
+    define(['ApiClient', 'model/BusinessCardRecognitionResult', 'model/ImageToLinesWithLocationResult', 'model/ImageToTextResponse', 'model/ImageToWordsWithLocationResult', 'model/PhotoToWordsWithLocationResult', 'model/ReceiptRecognitionResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ImageToLinesWithLocationResult'), require('../model/ImageToTextResponse'), require('../model/ImageToWordsWithLocationResult'), require('../model/PhotoToWordsWithLocationResult'), require('../model/ReceiptRecognitionResult'));
+    module.exports = factory(require('../ApiClient'), require('../model/BusinessCardRecognitionResult'), require('../model/ImageToLinesWithLocationResult'), require('../model/ImageToTextResponse'), require('../model/ImageToWordsWithLocationResult'), require('../model/PhotoToWordsWithLocationResult'), require('../model/ReceiptRecognitionResult'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.ImageOcrApi = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.ImageToLinesWithLocationResult, root.CloudmersiveOcrApiClient.ImageToTextResponse, root.CloudmersiveOcrApiClient.ImageToWordsWithLocationResult, root.CloudmersiveOcrApiClient.PhotoToWordsWithLocationResult, root.CloudmersiveOcrApiClient.ReceiptRecognitionResult);
+    root.CloudmersiveOcrApiClient.ImageOcrApi = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.BusinessCardRecognitionResult, root.CloudmersiveOcrApiClient.ImageToLinesWithLocationResult, root.CloudmersiveOcrApiClient.ImageToTextResponse, root.CloudmersiveOcrApiClient.ImageToWordsWithLocationResult, root.CloudmersiveOcrApiClient.PhotoToWordsWithLocationResult, root.CloudmersiveOcrApiClient.ReceiptRecognitionResult);
   }
-}(this, function(ApiClient, ImageToLinesWithLocationResult, ImageToTextResponse, ImageToWordsWithLocationResult, PhotoToWordsWithLocationResult, ReceiptRecognitionResult) {
+}(this, function(ApiClient, BusinessCardRecognitionResult, ImageToLinesWithLocationResult, ImageToTextResponse, ImageToWordsWithLocationResult, PhotoToWordsWithLocationResult, ReceiptRecognitionResult) {
   'use strict';
 
   /**
    * ImageOcr service.
    * @module api/ImageOcrApi
-   * @version 1.2.1
+   * @version 1.2.2
    */
 
   /**
@@ -150,6 +150,54 @@
 
       return this.apiClient.callApi(
         '/ocr/image/to/words-with-location', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the imageOcrPhotoRecognizeBusinessCard operation.
+     * @callback module:api/ImageOcrApi~imageOcrPhotoRecognizeBusinessCardCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BusinessCardRecognitionResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Recognize a photo of a business card, extract key business information
+     * Analyzes a photograph of a business card as input, and outputs key business information such as the name of the person, name of the business, the address of the business, the phone number, the email address and more.
+     * @param {File} imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+     * @param {module:api/ImageOcrApi~imageOcrPhotoRecognizeBusinessCardCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BusinessCardRecognitionResult}
+     */
+    this.imageOcrPhotoRecognizeBusinessCard = function(imageFile, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'imageFile' is set
+      if (imageFile === undefined || imageFile === null) {
+        throw new Error("Missing the required parameter 'imageFile' when calling imageOcrPhotoRecognizeBusinessCard");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+        'imageFile': imageFile
+      };
+
+      var authNames = ['Apikey'];
+      var contentTypes = ['multipart/form-data'];
+      var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
+      var returnType = BusinessCardRecognitionResult;
+
+      return this.apiClient.callApi(
+        '/ocr/photo/recognize/business-card', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
