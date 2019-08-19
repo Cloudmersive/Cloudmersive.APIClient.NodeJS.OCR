@@ -16,73 +16,63 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/FormFieldDefinition'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./FormFieldDefinition'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.GetPageAngleResult = factory(root.CloudmersiveOcrApiClient.ApiClient);
+    root.CloudmersiveOcrApiClient.FormDefinitionTemplate = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.FormFieldDefinition);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, FormFieldDefinition) {
   'use strict';
 
 
 
 
   /**
-   * The GetPageAngleResult model module.
-   * @module model/GetPageAngleResult
+   * The FormDefinitionTemplate model module.
+   * @module model/FormDefinitionTemplate
    * @version 1.2.3
    */
 
   /**
-   * Constructs a new <code>GetPageAngleResult</code>.
-   * Result of performing a get-page-angle operation
-   * @alias module:model/GetPageAngleResult
+   * Constructs a new <code>FormDefinitionTemplate</code>.
+   * Definition of a form template; use a form template definition to recognize the fields in a form with Cloudmersive OCR
+   * @alias module:model/FormDefinitionTemplate
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
-
   };
 
   /**
-   * Constructs a <code>GetPageAngleResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>FormDefinitionTemplate</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/GetPageAngleResult} obj Optional instance to populate.
-   * @return {module:model/GetPageAngleResult} The populated <code>GetPageAngleResult</code> instance.
+   * @param {module:model/FormDefinitionTemplate} obj Optional instance to populate.
+   * @return {module:model/FormDefinitionTemplate} The populated <code>FormDefinitionTemplate</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('Successful')) {
-        obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
-      }
-      if (data.hasOwnProperty('Angle')) {
-        obj['Angle'] = ApiClient.convertToType(data['Angle'], 'Number');
+      if (data.hasOwnProperty('FieldDefinitions')) {
+        obj['FieldDefinitions'] = ApiClient.convertToType(data['FieldDefinitions'], [FormFieldDefinition]);
       }
     }
     return obj;
   }
 
   /**
-   * True if the operation was successful, false otherwise
-   * @member {Boolean} Successful
+   * @member {Array.<module:model/FormFieldDefinition>} FieldDefinitions
    */
-  exports.prototype['Successful'] = undefined;
-  /**
-   * Angle of the page in radians; 0 represents perfectly horizontal
-   * @member {Number} Angle
-   */
-  exports.prototype['Angle'] = undefined;
+  exports.prototype['FieldDefinitions'] = undefined;
 
 
 

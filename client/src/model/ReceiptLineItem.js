@@ -16,33 +16,33 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/OcrWordElement'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./OcrWordElement'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.OcrLineElement = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.OcrWordElement);
+    root.CloudmersiveOcrApiClient.ReceiptLineItem = factory(root.CloudmersiveOcrApiClient.ApiClient);
   }
-}(this, function(ApiClient, OcrWordElement) {
+}(this, function(ApiClient) {
   'use strict';
 
 
 
 
   /**
-   * The OcrLineElement model module.
-   * @module model/OcrLineElement
+   * The ReceiptLineItem model module.
+   * @module model/ReceiptLineItem
    * @version 1.2.3
    */
 
   /**
-   * Constructs a new <code>OcrLineElement</code>.
-   * A contiguous line of text in an OCR document
-   * @alias module:model/OcrLineElement
+   * Constructs a new <code>ReceiptLineItem</code>.
+   * Receipt line item, comprised of a product or item and a price (if available)
+   * @alias module:model/ReceiptLineItem
    * @class
    */
   var exports = function() {
@@ -53,36 +53,34 @@
   };
 
   /**
-   * Constructs a <code>OcrLineElement</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ReceiptLineItem</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/OcrLineElement} obj Optional instance to populate.
-   * @return {module:model/OcrLineElement} The populated <code>OcrLineElement</code> instance.
+   * @param {module:model/ReceiptLineItem} obj Optional instance to populate.
+   * @return {module:model/ReceiptLineItem} The populated <code>ReceiptLineItem</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('LineText')) {
-        obj['LineText'] = ApiClient.convertToType(data['LineText'], 'String');
+      if (data.hasOwnProperty('ItemDescription')) {
+        obj['ItemDescription'] = ApiClient.convertToType(data['ItemDescription'], 'String');
       }
-      if (data.hasOwnProperty('Words')) {
-        obj['Words'] = ApiClient.convertToType(data['Words'], [OcrWordElement]);
+      if (data.hasOwnProperty('ItemPrice')) {
+        obj['ItemPrice'] = ApiClient.convertToType(data['ItemPrice'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * Text of the line
-   * @member {String} LineText
+   * @member {String} ItemDescription
    */
-  exports.prototype['LineText'] = undefined;
+  exports.prototype['ItemDescription'] = undefined;
   /**
-   * Word objects in the line
-   * @member {Array.<module:model/OcrWordElement>} Words
+   * @member {Number} ItemPrice
    */
-  exports.prototype['Words'] = undefined;
+  exports.prototype['ItemPrice'] = undefined;
 
 
 

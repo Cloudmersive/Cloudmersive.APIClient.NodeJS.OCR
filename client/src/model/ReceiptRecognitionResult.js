@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/ReceiptLineItem'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./ReceiptLineItem'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.ReceiptRecognitionResult = factory(root.CloudmersiveOcrApiClient.ApiClient);
+    root.CloudmersiveOcrApiClient.ReceiptRecognitionResult = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.ReceiptLineItem);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, ReceiptLineItem) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The ReceiptRecognitionResult model module.
    * @module model/ReceiptRecognitionResult
-   * @version 1.2.2
+   * @version 1.2.3
    */
 
   /**
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -76,11 +78,17 @@
       if (data.hasOwnProperty('BusinessName')) {
         obj['BusinessName'] = ApiClient.convertToType(data['BusinessName'], 'String');
       }
+      if (data.hasOwnProperty('BusinessWebsite')) {
+        obj['BusinessWebsite'] = ApiClient.convertToType(data['BusinessWebsite'], 'String');
+      }
       if (data.hasOwnProperty('AddressString')) {
         obj['AddressString'] = ApiClient.convertToType(data['AddressString'], 'String');
       }
       if (data.hasOwnProperty('PhoneNumber')) {
         obj['PhoneNumber'] = ApiClient.convertToType(data['PhoneNumber'], 'String');
+      }
+      if (data.hasOwnProperty('ReceiptItems')) {
+        obj['ReceiptItems'] = ApiClient.convertToType(data['ReceiptItems'], [ReceiptLineItem]);
       }
       if (data.hasOwnProperty('ReceiptTotal')) {
         obj['ReceiptTotal'] = ApiClient.convertToType(data['ReceiptTotal'], 'Number');
@@ -102,6 +110,10 @@
    */
   exports.prototype['BusinessName'] = undefined;
   /**
+   * @member {String} BusinessWebsite
+   */
+  exports.prototype['BusinessWebsite'] = undefined;
+  /**
    * @member {String} AddressString
    */
   exports.prototype['AddressString'] = undefined;
@@ -109,6 +121,10 @@
    * @member {String} PhoneNumber
    */
   exports.prototype['PhoneNumber'] = undefined;
+  /**
+   * @member {Array.<module:model/ReceiptLineItem>} ReceiptItems
+   */
+  exports.prototype['ReceiptItems'] = undefined;
   /**
    * @member {Number} ReceiptTotal
    */

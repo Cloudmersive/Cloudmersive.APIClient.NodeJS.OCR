@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property businessWebsite (base name: "BusinessWebsite")', function() {
+      // uncomment below and update the code to test the property businessWebsite
+      //var instane = new CloudmersiveOcrApiClient.ReceiptRecognitionResult();
+      //expect(instance).to.be();
+    });
+
     it('should have the property addressString (base name: "AddressString")', function() {
       // uncomment below and update the code to test the property addressString
       //var instane = new CloudmersiveOcrApiClient.ReceiptRecognitionResult();
@@ -82,6 +88,12 @@
 
     it('should have the property phoneNumber (base name: "PhoneNumber")', function() {
       // uncomment below and update the code to test the property phoneNumber
+      //var instane = new CloudmersiveOcrApiClient.ReceiptRecognitionResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property receiptItems (base name: "ReceiptItems")', function() {
+      // uncomment below and update the code to test the property receiptItems
       //var instane = new CloudmersiveOcrApiClient.ReceiptRecognitionResult();
       //expect(instance).to.be();
     });

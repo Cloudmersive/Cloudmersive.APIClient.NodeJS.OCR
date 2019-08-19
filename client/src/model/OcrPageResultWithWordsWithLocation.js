@@ -36,7 +36,7 @@
   /**
    * The OcrPageResultWithWordsWithLocation model module.
    * @module model/OcrPageResultWithWordsWithLocation
-   * @version 1.2.2
+   * @version 1.2.3
    */
 
   /**

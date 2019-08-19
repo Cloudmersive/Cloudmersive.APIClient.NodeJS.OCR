@@ -33,7 +33,7 @@
   /**
    * PdfOcr service.
    * @module api/PdfOcrApi
-   * @version 1.2.2
+   * @version 1.2.3
    */
 
   /**
