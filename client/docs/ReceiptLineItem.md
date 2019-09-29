@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**itemDescription** | **String** |  | [optional] 
-**itemPrice** | **Number** |  | [optional] 
+**itemDescription** | **String** | Description of the item | [optional] 
+**itemPrice** | **Number** | Price of the item if available | [optional] 
 
 

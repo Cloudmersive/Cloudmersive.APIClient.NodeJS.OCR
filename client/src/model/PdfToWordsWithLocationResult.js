@@ -36,7 +36,7 @@
   /**
    * The PdfToWordsWithLocationResult model module.
    * @module model/PdfToWordsWithLocationResult
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**
@@ -74,10 +74,12 @@
   }
 
   /**
+   * True if successful, false otherwise
    * @member {Boolean} Successful
    */
   exports.prototype['Successful'] = undefined;
   /**
+   * OCR page results
    * @member {Array.<module:model/OcrPageResultWithWordsWithLocation>} OcrPages
    */
   exports.prototype['OcrPages'] = undefined;

@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveOcrApiClient.FormRecognitionResult();
+    instance = new CloudmersiveOcrApiClient.TableRowResult();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,28 +49,16 @@
       object[property] = value;
   }
 
-  describe('FormRecognitionResult', function() {
-    it('should create an instance of FormRecognitionResult', function() {
-      // uncomment below and update the code to test FormRecognitionResult
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
-      //expect(instance).to.be.a(CloudmersiveOcrApiClient.FormRecognitionResult);
+  describe('TableRowResult', function() {
+    it('should create an instance of TableRowResult', function() {
+      // uncomment below and update the code to test TableRowResult
+      //var instane = new CloudmersiveOcrApiClient.TableRowResult();
+      //expect(instance).to.be.a(CloudmersiveOcrApiClient.TableRowResult);
     });
 
-    it('should have the property successful (base name: "Successful")', function() {
-      // uncomment below and update the code to test the property successful
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property fieldValueExtractionResult (base name: "FieldValueExtractionResult")', function() {
-      // uncomment below and update the code to test the property fieldValueExtractionResult
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property tableValueExtractionResults (base name: "TableValueExtractionResults")', function() {
-      // uncomment below and update the code to test the property tableValueExtractionResults
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
+    it('should have the property tableRowCellsResult (base name: "TableRowCellsResult")', function() {
+      // uncomment below and update the code to test the property tableRowCellsResult
+      //var instane = new CloudmersiveOcrApiClient.TableRowResult();
       //expect(instance).to.be();
     });
 

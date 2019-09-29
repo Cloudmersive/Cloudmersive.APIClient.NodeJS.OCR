@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api) provides advanced machine learning capabilities for converting scanned documents and photos of documents and receipts to text.
 
 - API version: v1
-- Package version: 1.2.3
+- Package version: 1.2.4
 
 
 ## Installation
@@ -144,6 +144,7 @@ Class | Method | HTTP request | Description
 *CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingBinarizeAdvanced**](docs/PreprocessingApi.md#preprocessingBinarizeAdvanced) | **POST** /ocr/preprocessing/image/binarize/advanced | Convert an image of text into a binary (light and dark) view with ML
 *CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingGetPageAngle**](docs/PreprocessingApi.md#preprocessingGetPageAngle) | **POST** /ocr/preprocessing/image/get-page-angle | Get the angle of the page / document / receipt
 *CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingUnrotate**](docs/PreprocessingApi.md#preprocessingUnrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
+*CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingUnrotateAdvanced**](docs/PreprocessingApi.md#preprocessingUnrotateAdvanced) | **POST** /ocr/preprocessing/image/unrotate/advanced | Detect and unrotate a document image (advanced)
 *CloudmersiveOcrApiClient.PreprocessingApi* | [**preprocessingUnskew**](docs/PreprocessingApi.md#preprocessingUnskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
 *CloudmersiveOcrApiClient.ReceiptsApi* | [**receiptsPhotoToCSV**](docs/ReceiptsApi.md#receiptsPhotoToCSV) | **POST** /ocr/receipts/photo/to/csv | Convert a photo of a receipt into a CSV file containing structured information from the receipt
 
@@ -155,6 +156,8 @@ Class | Method | HTTP request | Description
  - [CloudmersiveOcrApiClient.FormDefinitionTemplate](docs/FormDefinitionTemplate.md)
  - [CloudmersiveOcrApiClient.FormFieldDefinition](docs/FormFieldDefinition.md)
  - [CloudmersiveOcrApiClient.FormRecognitionResult](docs/FormRecognitionResult.md)
+ - [CloudmersiveOcrApiClient.FormTableColumnDefinition](docs/FormTableColumnDefinition.md)
+ - [CloudmersiveOcrApiClient.FormTableDefinition](docs/FormTableDefinition.md)
  - [CloudmersiveOcrApiClient.GetPageAngleResult](docs/GetPageAngleResult.md)
  - [CloudmersiveOcrApiClient.ImageToLinesWithLocationResult](docs/ImageToLinesWithLocationResult.md)
  - [CloudmersiveOcrApiClient.ImageToTextResponse](docs/ImageToTextResponse.md)
@@ -169,8 +172,12 @@ Class | Method | HTTP request | Description
  - [CloudmersiveOcrApiClient.PdfToTextResponse](docs/PdfToTextResponse.md)
  - [CloudmersiveOcrApiClient.PdfToWordsWithLocationResult](docs/PdfToWordsWithLocationResult.md)
  - [CloudmersiveOcrApiClient.PhotoToWordsWithLocationResult](docs/PhotoToWordsWithLocationResult.md)
+ - [CloudmersiveOcrApiClient.Point](docs/Point.md)
  - [CloudmersiveOcrApiClient.ReceiptLineItem](docs/ReceiptLineItem.md)
  - [CloudmersiveOcrApiClient.ReceiptRecognitionResult](docs/ReceiptRecognitionResult.md)
+ - [CloudmersiveOcrApiClient.TableCellResult](docs/TableCellResult.md)
+ - [CloudmersiveOcrApiClient.TableResult](docs/TableResult.md)
+ - [CloudmersiveOcrApiClient.TableRowResult](docs/TableRowResult.md)
 
 
 ## Documentation for Authorization

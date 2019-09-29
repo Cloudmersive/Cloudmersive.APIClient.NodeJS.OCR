@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveOcrApiClient.FormRecognitionResult();
+    instance = new CloudmersiveOcrApiClient.FormTableDefinition();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,28 +49,34 @@
       object[property] = value;
   }
 
-  describe('FormRecognitionResult', function() {
-    it('should create an instance of FormRecognitionResult', function() {
-      // uncomment below and update the code to test FormRecognitionResult
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
-      //expect(instance).to.be.a(CloudmersiveOcrApiClient.FormRecognitionResult);
+  describe('FormTableDefinition', function() {
+    it('should create an instance of FormTableDefinition', function() {
+      // uncomment below and update the code to test FormTableDefinition
+      //var instane = new CloudmersiveOcrApiClient.FormTableDefinition();
+      //expect(instance).to.be.a(CloudmersiveOcrApiClient.FormTableDefinition);
     });
 
-    it('should have the property successful (base name: "Successful")', function() {
-      // uncomment below and update the code to test the property successful
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
+    it('should have the property tableID (base name: "TableID")', function() {
+      // uncomment below and update the code to test the property tableID
+      //var instane = new CloudmersiveOcrApiClient.FormTableDefinition();
       //expect(instance).to.be();
     });
 
-    it('should have the property fieldValueExtractionResult (base name: "FieldValueExtractionResult")', function() {
-      // uncomment below and update the code to test the property fieldValueExtractionResult
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
+    it('should have the property columnDefinitions (base name: "ColumnDefinitions")', function() {
+      // uncomment below and update the code to test the property columnDefinitions
+      //var instane = new CloudmersiveOcrApiClient.FormTableDefinition();
       //expect(instance).to.be();
     });
 
-    it('should have the property tableValueExtractionResults (base name: "TableValueExtractionResults")', function() {
-      // uncomment below and update the code to test the property tableValueExtractionResults
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
+    it('should have the property targetTableHeightRelative (base name: "TargetTableHeight_Relative")', function() {
+      // uncomment below and update the code to test the property targetTableHeightRelative
+      //var instane = new CloudmersiveOcrApiClient.FormTableDefinition();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property targetRowHeightRelative (base name: "TargetRowHeight_Relative")', function() {
+      // uncomment below and update the code to test the property targetRowHeightRelative
+      //var instane = new CloudmersiveOcrApiClient.FormTableDefinition();
       //expect(instance).to.be();
     });
 

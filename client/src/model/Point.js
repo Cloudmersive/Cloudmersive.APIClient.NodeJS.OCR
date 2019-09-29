@@ -25,7 +25,7 @@
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.ImageToTextResponse = factory(root.CloudmersiveOcrApiClient.ApiClient);
+    root.CloudmersiveOcrApiClient.Point = factory(root.CloudmersiveOcrApiClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,15 +34,15 @@
 
 
   /**
-   * The ImageToTextResponse model module.
-   * @module model/ImageToTextResponse
+   * The Point model module.
+   * @module model/Point
    * @version 1.2.4
    */
 
   /**
-   * Constructs a new <code>ImageToTextResponse</code>.
-   * Response from an OCR to text operation.  Includes the confience rating and converted text result.
-   * @alias module:model/ImageToTextResponse
+   * Constructs a new <code>Point</code>.
+   * Point location in 2D in an image, where 0, 0 represents the top/left corner of the image
+   * @alias module:model/Point
    * @class
    */
   var exports = function() {
@@ -53,36 +53,36 @@
   };
 
   /**
-   * Constructs a <code>ImageToTextResponse</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>Point</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ImageToTextResponse} obj Optional instance to populate.
-   * @return {module:model/ImageToTextResponse} The populated <code>ImageToTextResponse</code> instance.
+   * @param {module:model/Point} obj Optional instance to populate.
+   * @return {module:model/Point} The populated <code>Point</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('MeanConfidenceLevel')) {
-        obj['MeanConfidenceLevel'] = ApiClient.convertToType(data['MeanConfidenceLevel'], 'Number');
+      if (data.hasOwnProperty('X')) {
+        obj['X'] = ApiClient.convertToType(data['X'], 'Number');
       }
-      if (data.hasOwnProperty('TextResult')) {
-        obj['TextResult'] = ApiClient.convertToType(data['TextResult'], 'String');
+      if (data.hasOwnProperty('Y')) {
+        obj['Y'] = ApiClient.convertToType(data['Y'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * Confidence level rating of the OCR operation; ratings above 80% are strong.
-   * @member {Number} MeanConfidenceLevel
+   * X location in 2D in the image, where 0 represents the left edge of the image
+   * @member {Number} X
    */
-  exports.prototype['MeanConfidenceLevel'] = undefined;
+  exports.prototype['X'] = undefined;
   /**
-   * Converted text string from the image input.
-   * @member {String} TextResult
+   * Y location in 2D in the image, where 0 represents the top edge of the image
+   * @member {Number} Y
    */
-  exports.prototype['TextResult'] = undefined;
+  exports.prototype['Y'] = undefined;
 
 
 

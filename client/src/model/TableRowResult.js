@@ -16,73 +16,64 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/TableCellResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./TableCellResult'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.ReceiptLineItem = factory(root.CloudmersiveOcrApiClient.ApiClient);
+    root.CloudmersiveOcrApiClient.TableRowResult = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.TableCellResult);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, TableCellResult) {
   'use strict';
 
 
 
 
   /**
-   * The ReceiptLineItem model module.
-   * @module model/ReceiptLineItem
+   * The TableRowResult model module.
+   * @module model/TableRowResult
    * @version 1.2.4
    */
 
   /**
-   * Constructs a new <code>ReceiptLineItem</code>.
-   * Receipt line item, comprised of a product or item and a price (if available)
-   * @alias module:model/ReceiptLineItem
+   * Constructs a new <code>TableRowResult</code>.
+   * One row of data in the resulting table
+   * @alias module:model/TableRowResult
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
-
   };
 
   /**
-   * Constructs a <code>ReceiptLineItem</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TableRowResult</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/ReceiptLineItem} obj Optional instance to populate.
-   * @return {module:model/ReceiptLineItem} The populated <code>ReceiptLineItem</code> instance.
+   * @param {module:model/TableRowResult} obj Optional instance to populate.
+   * @return {module:model/TableRowResult} The populated <code>TableRowResult</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('ItemDescription')) {
-        obj['ItemDescription'] = ApiClient.convertToType(data['ItemDescription'], 'String');
-      }
-      if (data.hasOwnProperty('ItemPrice')) {
-        obj['ItemPrice'] = ApiClient.convertToType(data['ItemPrice'], 'Number');
+      if (data.hasOwnProperty('TableRowCellsResult')) {
+        obj['TableRowCellsResult'] = ApiClient.convertToType(data['TableRowCellsResult'], [TableCellResult]);
       }
     }
     return obj;
   }
 
   /**
-   * Description of the item
-   * @member {String} ItemDescription
+   * Table cells in this row result
+   * @member {Array.<module:model/TableCellResult>} TableRowCellsResult
    */
-  exports.prototype['ItemDescription'] = undefined;
-  /**
-   * Price of the item if available
-   * @member {Number} ItemPrice
-   */
-  exports.prototype['ItemPrice'] = undefined;
+  exports.prototype['TableRowCellsResult'] = undefined;
 
 
 

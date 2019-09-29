@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property boundingPoints (base name: "BoundingPoints")', function() {
+      // uncomment below and update the code to test the property boundingPoints
+      //var instane = new CloudmersiveOcrApiClient.OcrPhotoTextElement();
+      //expect(instance).to.be();
+    });
+
     it('should have the property confidenceLevel (base name: "ConfidenceLevel")', function() {
       // uncomment below and update the code to test the property confidenceLevel
       //var instane = new CloudmersiveOcrApiClient.OcrPhotoTextElement();

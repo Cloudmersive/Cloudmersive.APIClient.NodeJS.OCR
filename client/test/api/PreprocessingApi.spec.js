@@ -90,6 +90,16 @@
         done();
       });
     });
+    describe('preprocessingUnrotateAdvanced', function() {
+      it('should call preprocessingUnrotateAdvanced successfully', function(done) {
+        //uncomment below and update the code to test preprocessingUnrotateAdvanced
+        //instance.preprocessingUnrotateAdvanced(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('preprocessingUnskew', function() {
       it('should call preprocessingUnskew successfully', function(done) {
         //uncomment below and update the code to test preprocessingUnskew

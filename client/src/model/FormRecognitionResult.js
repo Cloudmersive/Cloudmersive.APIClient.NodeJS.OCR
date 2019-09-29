@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/FieldResult'], factory);
+    define(['ApiClient', 'model/FieldResult', 'model/TableResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./FieldResult'));
+    module.exports = factory(require('../ApiClient'), require('./FieldResult'), require('./TableResult'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.FormRecognitionResult = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.FieldResult);
+    root.CloudmersiveOcrApiClient.FormRecognitionResult = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.FieldResult, root.CloudmersiveOcrApiClient.TableResult);
   }
-}(this, function(ApiClient, FieldResult) {
+}(this, function(ApiClient, FieldResult, TableResult) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The FormRecognitionResult model module.
    * @module model/FormRecognitionResult
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -69,18 +70,28 @@
       if (data.hasOwnProperty('FieldValueExtractionResult')) {
         obj['FieldValueExtractionResult'] = ApiClient.convertToType(data['FieldValueExtractionResult'], [FieldResult]);
       }
+      if (data.hasOwnProperty('TableValueExtractionResults')) {
+        obj['TableValueExtractionResults'] = ApiClient.convertToType(data['TableValueExtractionResults'], [TableResult]);
+      }
     }
     return obj;
   }
 
   /**
+   * True if the operation was successful, false otherwise
    * @member {Boolean} Successful
    */
   exports.prototype['Successful'] = undefined;
   /**
+   * Result of form field OCR data extraction
    * @member {Array.<module:model/FieldResult>} FieldValueExtractionResult
    */
   exports.prototype['FieldValueExtractionResult'] = undefined;
+  /**
+   * Result of form table OCR data extraction
+   * @member {Array.<module:model/TableResult>} TableValueExtractionResults
+   */
+  exports.prototype['TableValueExtractionResults'] = undefined;
 
 
 

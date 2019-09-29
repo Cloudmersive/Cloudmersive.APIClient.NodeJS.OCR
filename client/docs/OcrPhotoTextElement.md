@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **yTop** | **Number** | Y location of the top edge of the word in pixels | [optional] 
 **width** | **Number** | Width of the word in pixels | [optional] 
 **height** | **Number** | Height of the word in pixels | [optional] 
+**boundingPoints** | [**[Point]**](Point.md) | Points that form the bounding polygon around the text | [optional] 
 **confidenceLevel** | **Number** | Confidence level of the machine learning result; possible values are 0.0 (lowest accuracy) - 1.0 (highest accuracy) | [optional] 
 
 

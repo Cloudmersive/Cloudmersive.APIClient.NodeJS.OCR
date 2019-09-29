@@ -36,7 +36,7 @@
   /**
    * The BusinessCardRecognitionResult model module.
    * @module model/BusinessCardRecognitionResult
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**
@@ -98,34 +98,42 @@
   }
 
   /**
+   * True if the operation was successful, false otherwise
    * @member {Boolean} Successful
    */
   exports.prototype['Successful'] = undefined;
   /**
+   * The name of the person printed on the business card (if included on the business card)
    * @member {String} PersonName
    */
   exports.prototype['PersonName'] = undefined;
   /**
+   * The title of the person printed on the business card (if included on the business card)
    * @member {String} PersonTitle
    */
   exports.prototype['PersonTitle'] = undefined;
   /**
+   * The name of the business printed on the business card (if included on the business card)
    * @member {String} BusinessName
    */
   exports.prototype['BusinessName'] = undefined;
   /**
+   * The address printed on the business card (if included on the business card)
    * @member {String} AddressString
    */
   exports.prototype['AddressString'] = undefined;
   /**
+   * The phone number printed on the business card (if included on the business card)
    * @member {String} PhoneNumber
    */
   exports.prototype['PhoneNumber'] = undefined;
   /**
+   * The email address printed on the business card (if included on the business card)
    * @member {String} EmailAddress
    */
   exports.prototype['EmailAddress'] = undefined;
   /**
+   * The date and time printed on the business card (if included on the business card)
    * @member {Date} Timestamp
    */
   exports.prototype['Timestamp'] = undefined;

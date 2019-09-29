@@ -36,7 +36,7 @@
   /**
    * The FieldResult model module.
    * @module model/FieldResult
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**
@@ -74,10 +74,12 @@
   }
 
   /**
+   * Target field to extract from the form
    * @member {module:model/FormFieldDefinition} TargetField
    */
   exports.prototype['TargetField'] = undefined;
   /**
+   * Result field value(s) extracted
    * @member {Array.<module:model/OcrPhotoTextElement>} FieldValues
    */
   exports.prototype['FieldValues'] = undefined;

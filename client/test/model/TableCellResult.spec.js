@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveOcrApiClient.FormRecognitionResult();
+    instance = new CloudmersiveOcrApiClient.TableCellResult();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,28 +49,22 @@
       object[property] = value;
   }
 
-  describe('FormRecognitionResult', function() {
-    it('should create an instance of FormRecognitionResult', function() {
-      // uncomment below and update the code to test FormRecognitionResult
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
-      //expect(instance).to.be.a(CloudmersiveOcrApiClient.FormRecognitionResult);
+  describe('TableCellResult', function() {
+    it('should create an instance of TableCellResult', function() {
+      // uncomment below and update the code to test TableCellResult
+      //var instane = new CloudmersiveOcrApiClient.TableCellResult();
+      //expect(instance).to.be.a(CloudmersiveOcrApiClient.TableCellResult);
     });
 
-    it('should have the property successful (base name: "Successful")', function() {
-      // uncomment below and update the code to test the property successful
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
+    it('should have the property columnID (base name: "ColumnID")', function() {
+      // uncomment below and update the code to test the property columnID
+      //var instane = new CloudmersiveOcrApiClient.TableCellResult();
       //expect(instance).to.be();
     });
 
-    it('should have the property fieldValueExtractionResult (base name: "FieldValueExtractionResult")', function() {
-      // uncomment below and update the code to test the property fieldValueExtractionResult
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property tableValueExtractionResults (base name: "TableValueExtractionResults")', function() {
-      // uncomment below and update the code to test the property tableValueExtractionResults
-      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
+    it('should have the property cellValues (base name: "CellValues")', function() {
+      // uncomment below and update the code to test the property cellValues
+      //var instane = new CloudmersiveOcrApiClient.TableCellResult();
       //expect(instance).to.be();
     });
 

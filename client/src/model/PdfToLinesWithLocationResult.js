@@ -36,7 +36,7 @@
   /**
    * The PdfToLinesWithLocationResult model module.
    * @module model/PdfToLinesWithLocationResult
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**
@@ -74,10 +74,12 @@
   }
 
   /**
+   * True if successful, false otherwise
    * @member {Boolean} Successful
    */
   exports.prototype['Successful'] = undefined;
   /**
+   * OCR results for each page
    * @member {Array.<module:model/OcrPageResultWithLinesWithLocation>} OcrPages
    */
   exports.prototype['OcrPages'] = undefined;

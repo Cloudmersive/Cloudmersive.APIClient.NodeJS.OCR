@@ -36,7 +36,7 @@
   /**
    * The OcrPageResultWithWordsWithLocation model module.
    * @module model/OcrPageResultWithWordsWithLocation
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**
@@ -64,11 +64,11 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('Successful')) {
-        obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
-      }
       if (data.hasOwnProperty('PageNumber')) {
         obj['PageNumber'] = ApiClient.convertToType(data['PageNumber'], 'Number');
+      }
+      if (data.hasOwnProperty('Successful')) {
+        obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
       }
       if (data.hasOwnProperty('Words')) {
         obj['Words'] = ApiClient.convertToType(data['Words'], [OcrWordElement]);
@@ -78,14 +78,15 @@
   }
 
   /**
-   * @member {Boolean} Successful
-   */
-  exports.prototype['Successful'] = undefined;
-  /**
    * Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file
    * @member {Number} PageNumber
    */
   exports.prototype['PageNumber'] = undefined;
+  /**
+   * True if successful, false otherwise
+   * @member {Boolean} Successful
+   */
+  exports.prototype['Successful'] = undefined;
   /**
    * Word elements in the image
    * @member {Array.<module:model/OcrWordElement>} Words

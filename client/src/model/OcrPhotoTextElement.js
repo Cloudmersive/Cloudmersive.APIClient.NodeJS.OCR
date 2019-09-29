@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Point'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Point'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveOcrApiClient) {
       root.CloudmersiveOcrApiClient = {};
     }
-    root.CloudmersiveOcrApiClient.OcrPhotoTextElement = factory(root.CloudmersiveOcrApiClient.ApiClient);
+    root.CloudmersiveOcrApiClient.OcrPhotoTextElement = factory(root.CloudmersiveOcrApiClient.ApiClient, root.CloudmersiveOcrApiClient.Point);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Point) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The OcrPhotoTextElement model module.
    * @module model/OcrPhotoTextElement
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -82,6 +83,9 @@
       if (data.hasOwnProperty('Height')) {
         obj['Height'] = ApiClient.convertToType(data['Height'], 'Number');
       }
+      if (data.hasOwnProperty('BoundingPoints')) {
+        obj['BoundingPoints'] = ApiClient.convertToType(data['BoundingPoints'], [Point]);
+      }
       if (data.hasOwnProperty('ConfidenceLevel')) {
         obj['ConfidenceLevel'] = ApiClient.convertToType(data['ConfidenceLevel'], 'Number');
       }
@@ -114,6 +118,11 @@
    * @member {Number} Height
    */
   exports.prototype['Height'] = undefined;
+  /**
+   * Points that form the bounding polygon around the text
+   * @member {Array.<module:model/Point>} BoundingPoints
+   */
+  exports.prototype['BoundingPoints'] = undefined;
   /**
    * Confidence level of the machine learning result; possible values are 0.0 (lowest accuracy) - 1.0 (highest accuracy)
    * @member {Number} ConfidenceLevel

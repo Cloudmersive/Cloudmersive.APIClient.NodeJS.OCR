@@ -36,7 +36,7 @@
   /**
    * The ImageToWordsWithLocationResult model module.
    * @module model/ImageToWordsWithLocationResult
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**
@@ -74,6 +74,7 @@
   }
 
   /**
+   * True if successful, false otherwise
    * @member {Boolean} Successful
    */
   exports.prototype['Successful'] = undefined;

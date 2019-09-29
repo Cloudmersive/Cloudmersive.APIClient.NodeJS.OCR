@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BusinessCardRecognitionResult', 'model/FieldResult', 'model/FormDefinitionTemplate', 'model/FormFieldDefinition', 'model/FormRecognitionResult', 'model/GetPageAngleResult', 'model/ImageToLinesWithLocationResult', 'model/ImageToTextResponse', 'model/ImageToWordsWithLocationResult', 'model/OcrLineElement', 'model/OcrPageResult', 'model/OcrPageResultWithLinesWithLocation', 'model/OcrPageResultWithWordsWithLocation', 'model/OcrPhotoTextElement', 'model/OcrWordElement', 'model/PdfToLinesWithLocationResult', 'model/PdfToTextResponse', 'model/PdfToWordsWithLocationResult', 'model/PhotoToWordsWithLocationResult', 'model/ReceiptLineItem', 'model/ReceiptRecognitionResult', 'api/ImageOcrApi', 'api/PdfOcrApi', 'api/PreprocessingApi', 'api/ReceiptsApi'], factory);
+    define(['ApiClient', 'model/BusinessCardRecognitionResult', 'model/FieldResult', 'model/FormDefinitionTemplate', 'model/FormFieldDefinition', 'model/FormRecognitionResult', 'model/FormTableColumnDefinition', 'model/FormTableDefinition', 'model/GetPageAngleResult', 'model/ImageToLinesWithLocationResult', 'model/ImageToTextResponse', 'model/ImageToWordsWithLocationResult', 'model/OcrLineElement', 'model/OcrPageResult', 'model/OcrPageResultWithLinesWithLocation', 'model/OcrPageResultWithWordsWithLocation', 'model/OcrPhotoTextElement', 'model/OcrWordElement', 'model/PdfToLinesWithLocationResult', 'model/PdfToTextResponse', 'model/PdfToWordsWithLocationResult', 'model/PhotoToWordsWithLocationResult', 'model/Point', 'model/ReceiptLineItem', 'model/ReceiptRecognitionResult', 'model/TableCellResult', 'model/TableResult', 'model/TableRowResult', 'api/ImageOcrApi', 'api/PdfOcrApi', 'api/PreprocessingApi', 'api/ReceiptsApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/BusinessCardRecognitionResult'), require('./model/FieldResult'), require('./model/FormDefinitionTemplate'), require('./model/FormFieldDefinition'), require('./model/FormRecognitionResult'), require('./model/GetPageAngleResult'), require('./model/ImageToLinesWithLocationResult'), require('./model/ImageToTextResponse'), require('./model/ImageToWordsWithLocationResult'), require('./model/OcrLineElement'), require('./model/OcrPageResult'), require('./model/OcrPageResultWithLinesWithLocation'), require('./model/OcrPageResultWithWordsWithLocation'), require('./model/OcrPhotoTextElement'), require('./model/OcrWordElement'), require('./model/PdfToLinesWithLocationResult'), require('./model/PdfToTextResponse'), require('./model/PdfToWordsWithLocationResult'), require('./model/PhotoToWordsWithLocationResult'), require('./model/ReceiptLineItem'), require('./model/ReceiptRecognitionResult'), require('./api/ImageOcrApi'), require('./api/PdfOcrApi'), require('./api/PreprocessingApi'), require('./api/ReceiptsApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/BusinessCardRecognitionResult'), require('./model/FieldResult'), require('./model/FormDefinitionTemplate'), require('./model/FormFieldDefinition'), require('./model/FormRecognitionResult'), require('./model/FormTableColumnDefinition'), require('./model/FormTableDefinition'), require('./model/GetPageAngleResult'), require('./model/ImageToLinesWithLocationResult'), require('./model/ImageToTextResponse'), require('./model/ImageToWordsWithLocationResult'), require('./model/OcrLineElement'), require('./model/OcrPageResult'), require('./model/OcrPageResultWithLinesWithLocation'), require('./model/OcrPageResultWithWordsWithLocation'), require('./model/OcrPhotoTextElement'), require('./model/OcrWordElement'), require('./model/PdfToLinesWithLocationResult'), require('./model/PdfToTextResponse'), require('./model/PdfToWordsWithLocationResult'), require('./model/PhotoToWordsWithLocationResult'), require('./model/Point'), require('./model/ReceiptLineItem'), require('./model/ReceiptRecognitionResult'), require('./model/TableCellResult'), require('./model/TableResult'), require('./model/TableRowResult'), require('./api/ImageOcrApi'), require('./api/PdfOcrApi'), require('./api/PreprocessingApi'), require('./api/ReceiptsApi'));
   }
-}(function(ApiClient, BusinessCardRecognitionResult, FieldResult, FormDefinitionTemplate, FormFieldDefinition, FormRecognitionResult, GetPageAngleResult, ImageToLinesWithLocationResult, ImageToTextResponse, ImageToWordsWithLocationResult, OcrLineElement, OcrPageResult, OcrPageResultWithLinesWithLocation, OcrPageResultWithWordsWithLocation, OcrPhotoTextElement, OcrWordElement, PdfToLinesWithLocationResult, PdfToTextResponse, PdfToWordsWithLocationResult, PhotoToWordsWithLocationResult, ReceiptLineItem, ReceiptRecognitionResult, ImageOcrApi, PdfOcrApi, PreprocessingApi, ReceiptsApi) {
+}(function(ApiClient, BusinessCardRecognitionResult, FieldResult, FormDefinitionTemplate, FormFieldDefinition, FormRecognitionResult, FormTableColumnDefinition, FormTableDefinition, GetPageAngleResult, ImageToLinesWithLocationResult, ImageToTextResponse, ImageToWordsWithLocationResult, OcrLineElement, OcrPageResult, OcrPageResultWithLinesWithLocation, OcrPageResultWithWordsWithLocation, OcrPhotoTextElement, OcrWordElement, PdfToLinesWithLocationResult, PdfToTextResponse, PdfToWordsWithLocationResult, PhotoToWordsWithLocationResult, Point, ReceiptLineItem, ReceiptRecognitionResult, TableCellResult, TableResult, TableRowResult, ImageOcrApi, PdfOcrApi, PreprocessingApi, ReceiptsApi) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.2.3
+   * @version 1.2.4
    */
   var exports = {
     /**
@@ -86,6 +86,16 @@
      * @property {module:model/FormRecognitionResult}
      */
     FormRecognitionResult: FormRecognitionResult,
+    /**
+     * The FormTableColumnDefinition model constructor.
+     * @property {module:model/FormTableColumnDefinition}
+     */
+    FormTableColumnDefinition: FormTableColumnDefinition,
+    /**
+     * The FormTableDefinition model constructor.
+     * @property {module:model/FormTableDefinition}
+     */
+    FormTableDefinition: FormTableDefinition,
     /**
      * The GetPageAngleResult model constructor.
      * @property {module:model/GetPageAngleResult}
@@ -157,6 +167,11 @@
      */
     PhotoToWordsWithLocationResult: PhotoToWordsWithLocationResult,
     /**
+     * The Point model constructor.
+     * @property {module:model/Point}
+     */
+    Point: Point,
+    /**
      * The ReceiptLineItem model constructor.
      * @property {module:model/ReceiptLineItem}
      */
@@ -166,6 +181,21 @@
      * @property {module:model/ReceiptRecognitionResult}
      */
     ReceiptRecognitionResult: ReceiptRecognitionResult,
+    /**
+     * The TableCellResult model constructor.
+     * @property {module:model/TableCellResult}
+     */
+    TableCellResult: TableCellResult,
+    /**
+     * The TableResult model constructor.
+     * @property {module:model/TableResult}
+     */
+    TableResult: TableResult,
+    /**
+     * The TableRowResult model constructor.
+     * @property {module:model/TableRowResult}
+     */
+    TableRowResult: TableRowResult,
     /**
      * The ImageOcrApi service constructor.
      * @property {module:api/ImageOcrApi}

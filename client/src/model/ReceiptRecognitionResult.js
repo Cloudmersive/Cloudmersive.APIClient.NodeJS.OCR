@@ -36,7 +36,7 @@
   /**
    * The ReceiptRecognitionResult model module.
    * @module model/ReceiptRecognitionResult
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**
@@ -98,34 +98,42 @@
   }
 
   /**
+   * True if the operation was successful, false otherwise
    * @member {Boolean} Successful
    */
   exports.prototype['Successful'] = undefined;
   /**
+   * The date and time printed on the receipt (if included on the receipt)
    * @member {Date} Timestamp
    */
   exports.prototype['Timestamp'] = undefined;
   /**
+   * The name of the business printed on the receipt (if included on the receipt)
    * @member {String} BusinessName
    */
   exports.prototype['BusinessName'] = undefined;
   /**
+   * The website URL of the business printed on the receipt (if included on the receipt)
    * @member {String} BusinessWebsite
    */
   exports.prototype['BusinessWebsite'] = undefined;
   /**
+   * The address of the business printed on the receipt (if included on the receipt)
    * @member {String} AddressString
    */
   exports.prototype['AddressString'] = undefined;
   /**
+   * The phone number printed on the receipt (if included on the receipt)
    * @member {String} PhoneNumber
    */
   exports.prototype['PhoneNumber'] = undefined;
   /**
+   * The individual line items comprising the order; does not include total (see ReceiptTotal)
    * @member {Array.<module:model/ReceiptLineItem>} ReceiptItems
    */
   exports.prototype['ReceiptItems'] = undefined;
   /**
+   * The total monetary value of the receipt (if included on the receipt)
    * @member {Number} ReceiptTotal
    */
   exports.prototype['ReceiptTotal'] = undefined;

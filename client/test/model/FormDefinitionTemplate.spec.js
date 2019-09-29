@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tableDefinitions (base name: "TableDefinitions")', function() {
+      // uncomment below and update the code to test the property tableDefinitions
+      //var instane = new CloudmersiveOcrApiClient.FormDefinitionTemplate();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

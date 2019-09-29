@@ -56,14 +56,14 @@
       //expect(instance).to.be.a(CloudmersiveOcrApiClient.OcrPageResultWithWordsWithLocation);
     });
 
-    it('should have the property successful (base name: "Successful")', function() {
-      // uncomment below and update the code to test the property successful
+    it('should have the property pageNumber (base name: "PageNumber")', function() {
+      // uncomment below and update the code to test the property pageNumber
       //var instane = new CloudmersiveOcrApiClient.OcrPageResultWithWordsWithLocation();
       //expect(instance).to.be();
     });
 
-    it('should have the property pageNumber (base name: "PageNumber")', function() {
-      // uncomment below and update the code to test the property pageNumber
+    it('should have the property successful (base name: "Successful")', function() {
+      // uncomment below and update the code to test the property successful
       //var instane = new CloudmersiveOcrApiClient.OcrPageResultWithWordsWithLocation();
       //expect(instance).to.be();
     });
