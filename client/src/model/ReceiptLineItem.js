@@ -36,7 +36,7 @@
   /**
    * The ReceiptLineItem model module.
    * @module model/ReceiptLineItem
-   * @version 1.2.4
+   * @version 1.2.5
    */
 
   /**

@@ -36,7 +36,7 @@
   /**
    * The ReceiptRecognitionResult model module.
    * @module model/ReceiptRecognitionResult
-   * @version 1.2.4
+   * @version 1.2.5
    */
 
   /**
