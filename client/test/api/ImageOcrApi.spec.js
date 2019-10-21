@@ -90,6 +90,16 @@
         done();
       });
     });
+    describe('imageOcrPhotoRecognizeFormAdvanced', function() {
+      it('should call imageOcrPhotoRecognizeFormAdvanced successfully', function(done) {
+        //uncomment below and update the code to test imageOcrPhotoRecognizeFormAdvanced
+        //instance.imageOcrPhotoRecognizeFormAdvanced(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('imageOcrPhotoRecognizeReceipt', function() {
       it('should call imageOcrPhotoRecognizeReceipt successfully', function(done) {
         //uncomment below and update the code to test imageOcrPhotoRecognizeReceipt

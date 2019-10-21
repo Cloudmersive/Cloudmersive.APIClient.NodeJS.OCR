@@ -33,7 +33,7 @@
   /**
    * ImageOcr service.
    * @module api/ImageOcrApi
-   * @version 1.2.5
+   * @version 1.2.6
    */
 
   /**
@@ -256,6 +256,64 @@
 
       return this.apiClient.callApi(
         '/ocr/photo/recognize/form', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the imageOcrPhotoRecognizeFormAdvanced operation.
+     * @callback module:api/ImageOcrApi~imageOcrPhotoRecognizeFormAdvancedCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/FormRecognitionResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Recognize a photo of a form, extract key fields using stored templates
+     * Analyzes a photograph of a form as input, and outputs key business fields and information.  Customzie data to be extracted by defining fields for the form.  Uses template definitions stored in Cloudmersive Configuration; to configure stored templates in a configuration bucket, log into Cloudmersive Management Portal and navigate to Settings &amp;gt; API Configuration &amp;gt; Create Bucket
+     * @param {File} imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.bucketID Bucket ID of the Configuration Bucket storing the form templates
+     * @param {String} opts.bucketSecretKey Bucket Secret Key of the Configuration Bucket storing the form templates
+     * @param {String} opts.recognitionMode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled.
+     * @param {String} opts.preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement.
+     * @param {module:api/ImageOcrApi~imageOcrPhotoRecognizeFormAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/FormRecognitionResult}
+     */
+    this.imageOcrPhotoRecognizeFormAdvanced = function(imageFile, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'imageFile' is set
+      if (imageFile === undefined || imageFile === null) {
+        throw new Error("Missing the required parameter 'imageFile' when calling imageOcrPhotoRecognizeFormAdvanced");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+        'bucketID': opts['bucketID'],
+        'bucketSecretKey': opts['bucketSecretKey'],
+        'recognitionMode': opts['recognitionMode'],
+        'preprocessing': opts['preprocessing']
+      };
+      var formParams = {
+        'imageFile': imageFile
+      };
+
+      var authNames = ['Apikey'];
+      var contentTypes = ['multipart/form-data'];
+      var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
+      var returnType = FormRecognitionResult;
+
+      return this.apiClient.callApi(
+        '/ocr/photo/recognize/form/advanced', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

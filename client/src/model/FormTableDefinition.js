@@ -36,7 +36,7 @@
   /**
    * The FormTableDefinition model module.
    * @module model/FormTableDefinition
-   * @version 1.2.5
+   * @version 1.2.6
    */
 
   /**

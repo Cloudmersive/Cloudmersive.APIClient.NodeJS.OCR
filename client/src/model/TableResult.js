@@ -36,7 +36,7 @@
   /**
    * The TableResult model module.
    * @module model/TableResult
-   * @version 1.2.5
+   * @version 1.2.6
    */
 
   /**
