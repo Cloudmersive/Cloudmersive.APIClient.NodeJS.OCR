@@ -36,7 +36,7 @@
   /**
    * The FormRecognitionResult model module.
    * @module model/FormRecognitionResult
-   * @version 1.2.7
+   * @version 1.2.8
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('TableValueExtractionResults')) {
         obj['TableValueExtractionResults'] = ApiClient.convertToType(data['TableValueExtractionResults'], [TableResult]);
       }
+      if (data.hasOwnProperty('Diagnostics')) {
+        obj['Diagnostics'] = ApiClient.convertToType(data['Diagnostics'], ['String']);
+      }
     }
     return obj;
   }
@@ -92,6 +96,11 @@
    * @member {Array.<module:model/TableResult>} TableValueExtractionResults
    */
   exports.prototype['TableValueExtractionResults'] = undefined;
+  /**
+   * Diagnostic images - default is null, enable diagnostics=true to populate this parameter with one image per field
+   * @member {Array.<String>} Diagnostics
+   */
+  exports.prototype['Diagnostics'] = undefined;
 
 
 

@@ -36,7 +36,7 @@
   /**
    * The FormFieldDefinition model module.
    * @module model/FormFieldDefinition
-   * @version 1.2.7
+   * @version 1.2.8
    */
 
   /**
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -110,6 +112,12 @@
       if (data.hasOwnProperty('TargetFieldHeight_Relative')) {
         obj['TargetFieldHeight_Relative'] = ApiClient.convertToType(data['TargetFieldHeight_Relative'], 'Number');
       }
+      if (data.hasOwnProperty('TargetFieldHorizontalAdjustment')) {
+        obj['TargetFieldHorizontalAdjustment'] = ApiClient.convertToType(data['TargetFieldHorizontalAdjustment'], 'Number');
+      }
+      if (data.hasOwnProperty('TargetFieldVerticalAdjustment')) {
+        obj['TargetFieldVerticalAdjustment'] = ApiClient.convertToType(data['TargetFieldVerticalAdjustment'], 'Number');
+      }
       if (data.hasOwnProperty('Ignore')) {
         obj['Ignore'] = ApiClient.convertToType(data['Ignore'], ['String']);
       }
@@ -133,7 +141,7 @@
    */
   exports.prototype['TopAnchor'] = undefined;
   /**
-   * Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial.
+   * Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial.
    * @member {String} AnchorMode
    */
   exports.prototype['AnchorMode'] = undefined;
@@ -177,6 +185,16 @@
    * @member {Number} TargetFieldHeight_Relative
    */
   exports.prototype['TargetFieldHeight_Relative'] = undefined;
+  /**
+   * Optional - horizontal adjestment in relative width of the field
+   * @member {Number} TargetFieldHorizontalAdjustment
+   */
+  exports.prototype['TargetFieldHorizontalAdjustment'] = undefined;
+  /**
+   * Optional - vertical adjestment in relative height of the field
+   * @member {Number} TargetFieldVerticalAdjustment
+   */
+  exports.prototype['TargetFieldVerticalAdjustment'] = undefined;
   /**
    * Optional - Ignore any result items that contain a partial or complete match with these text strings
    * @member {Array.<String>} Ignore

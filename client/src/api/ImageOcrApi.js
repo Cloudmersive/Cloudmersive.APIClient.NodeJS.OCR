@@ -33,7 +33,7 @@
   /**
    * ImageOcr service.
    * @module api/ImageOcrApi
-   * @version 1.2.7
+   * @version 1.2.8
    */
 
   /**
@@ -219,6 +219,7 @@
      * @param {String} opts.formTemplateDefinition Form field definitions
      * @param {String} opts.recognitionMode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled.
      * @param {String} opts.preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement.
+     * @param {String} opts.diagnostics Optional, diagnostics mode, default is &#39;false&#39;.  Possible values are &#39;true&#39; (will set DiagnosticImage to a diagnostic PNG image in the result), and &#39;false&#39; (no diagnostics are enabled; this is recommended for best performance).
      * @param {String} opts.language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish)
      * @param {module:api/ImageOcrApi~imageOcrPhotoRecognizeFormCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FormRecognitionResult}
@@ -243,6 +244,7 @@
         'formTemplateDefinition': opts['formTemplateDefinition'],
         'recognitionMode': opts['recognitionMode'],
         'preprocessing': opts['preprocessing'],
+        'diagnostics': opts['diagnostics'],
         'language': opts['language']
       };
       var formParams = {
@@ -278,6 +280,7 @@
      * @param {String} opts.bucketSecretKey Bucket Secret Key of the Configuration Bucket storing the form templates
      * @param {String} opts.recognitionMode Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled.
      * @param {String} opts.preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement.
+     * @param {String} opts.diagnostics Optional, diagnostics mode, default is &#39;false&#39;.  Possible values are &#39;true&#39; (will set DiagnosticImage to a diagnostic PNG image in the result), and &#39;false&#39; (no diagnostics are enabled; this is recommended for best performance).
      * @param {module:api/ImageOcrApi~imageOcrPhotoRecognizeFormAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FormRecognitionResult}
      */
@@ -301,7 +304,8 @@
         'bucketID': opts['bucketID'],
         'bucketSecretKey': opts['bucketSecretKey'],
         'recognitionMode': opts['recognitionMode'],
-        'preprocessing': opts['preprocessing']
+        'preprocessing': opts['preprocessing'],
+        'diagnostics': opts['diagnostics']
       };
       var formParams = {
         'imageFile': imageFile

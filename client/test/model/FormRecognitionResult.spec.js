@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property diagnostics (base name: "Diagnostics")', function() {
+      // uncomment below and update the code to test the property diagnostics
+      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

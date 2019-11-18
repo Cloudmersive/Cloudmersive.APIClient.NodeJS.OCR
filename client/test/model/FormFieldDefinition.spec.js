@@ -128,6 +128,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property targetFieldHorizontalAdjustment (base name: "TargetFieldHorizontalAdjustment")', function() {
+      // uncomment below and update the code to test the property targetFieldHorizontalAdjustment
+      //var instane = new CloudmersiveOcrApiClient.FormFieldDefinition();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property targetFieldVerticalAdjustment (base name: "TargetFieldVerticalAdjustment")', function() {
+      // uncomment below and update the code to test the property targetFieldVerticalAdjustment
+      //var instane = new CloudmersiveOcrApiClient.FormFieldDefinition();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ignore (base name: "Ignore")', function() {
       // uncomment below and update the code to test the property ignore
       //var instane = new CloudmersiveOcrApiClient.FormFieldDefinition();
