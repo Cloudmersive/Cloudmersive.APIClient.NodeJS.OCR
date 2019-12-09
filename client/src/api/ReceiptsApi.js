@@ -33,7 +33,7 @@
   /**
    * Receipts service.
    * @module api/ReceiptsApi
-   * @version 1.2.8
+   * @version 1.2.9
    */
 
   /**

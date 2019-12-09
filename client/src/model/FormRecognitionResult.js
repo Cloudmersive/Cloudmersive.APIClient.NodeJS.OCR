@@ -36,7 +36,7 @@
   /**
    * The FormRecognitionResult model module.
    * @module model/FormRecognitionResult
-   * @version 1.2.8
+   * @version 1.2.9
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -77,6 +78,9 @@
       if (data.hasOwnProperty('Diagnostics')) {
         obj['Diagnostics'] = ApiClient.convertToType(data['Diagnostics'], ['String']);
       }
+      if (data.hasOwnProperty('BestMatchFormSettingName')) {
+        obj['BestMatchFormSettingName'] = ApiClient.convertToType(data['BestMatchFormSettingName'], 'String');
+      }
     }
     return obj;
   }
@@ -101,6 +105,11 @@
    * @member {Array.<String>} Diagnostics
    */
   exports.prototype['Diagnostics'] = undefined;
+  /**
+   * Optional; populated when using photo/recognize/form/advanced with the Setting Name of the best-matching highest-relevance form
+   * @member {String} BestMatchFormSettingName
+   */
+  exports.prototype['BestMatchFormSettingName'] = undefined;
 
 
 

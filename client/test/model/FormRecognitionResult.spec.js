@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bestMatchFormSettingName (base name: "BestMatchFormSettingName")', function() {
+      // uncomment below and update the code to test the property bestMatchFormSettingName
+      //var instane = new CloudmersiveOcrApiClient.FormRecognitionResult();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

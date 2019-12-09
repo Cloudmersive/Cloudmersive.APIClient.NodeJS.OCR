@@ -36,7 +36,7 @@
   /**
    * The PdfToLinesWithLocationResult model module.
    * @module model/PdfToLinesWithLocationResult
-   * @version 1.2.8
+   * @version 1.2.9
    */
 
   /**

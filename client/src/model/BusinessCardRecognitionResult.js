@@ -36,7 +36,7 @@
   /**
    * The BusinessCardRecognitionResult model module.
    * @module model/BusinessCardRecognitionResult
-   * @version 1.2.8
+   * @version 1.2.9
    */
 
   /**

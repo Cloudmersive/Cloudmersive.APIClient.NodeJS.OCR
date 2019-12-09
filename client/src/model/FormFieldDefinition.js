@@ -36,7 +36,7 @@
   /**
    * The FormFieldDefinition model module.
    * @module model/FormFieldDefinition
-   * @version 1.2.8
+   * @version 1.2.9
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -84,6 +85,9 @@
       }
       if (data.hasOwnProperty('TopAnchor')) {
         obj['TopAnchor'] = ApiClient.convertToType(data['TopAnchor'], 'String');
+      }
+      if (data.hasOwnProperty('BottomAnchor')) {
+        obj['BottomAnchor'] = ApiClient.convertToType(data['BottomAnchor'], 'String');
       }
       if (data.hasOwnProperty('AnchorMode')) {
         obj['AnchorMode'] = ApiClient.convertToType(data['AnchorMode'], 'String');
@@ -126,7 +130,7 @@
   }
 
   /**
-   * The identifier of the field; use this to identify which field is being referenced
+   * The identifier of the field; use this to identify which field is being referenced.  Set to SkipField if you do not wish to return the value of this field in the result.
    * @member {String} FieldID
    */
   exports.prototype['FieldID'] = undefined;
@@ -140,6 +144,11 @@
    * @member {String} TopAnchor
    */
   exports.prototype['TopAnchor'] = undefined;
+  /**
+   * Optional - the bottom anchor of the field
+   * @member {String} BottomAnchor
+   */
+  exports.prototype['BottomAnchor'] = undefined;
   /**
    * Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial.
    * @member {String} AnchorMode
