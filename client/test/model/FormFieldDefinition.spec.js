@@ -152,6 +152,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property options (base name: "Options")', function() {
+      // uncomment below and update the code to test the property options
+      //var instane = new CloudmersiveOcrApiClient.FormFieldDefinition();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

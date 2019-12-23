@@ -36,7 +36,7 @@
   /**
    * The FormFieldDefinition model module.
    * @module model/FormFieldDefinition
-   * @version 1.2.9
+   * @version 1.3.0
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -124,6 +125,9 @@
       }
       if (data.hasOwnProperty('Ignore')) {
         obj['Ignore'] = ApiClient.convertToType(data['Ignore'], ['String']);
+      }
+      if (data.hasOwnProperty('Options')) {
+        obj['Options'] = ApiClient.convertToType(data['Options'], 'String');
       }
     }
     return obj;
@@ -209,6 +213,11 @@
    * @member {Array.<String>} Ignore
    */
   exports.prototype['Ignore'] = undefined;
+  /**
+   * Optional - additional options that can be set for this field definition, separated by commas.  Possible values are AllowMultiMatch (allow the same anchor to be matched to multiple fields)
+   * @member {String} Options
+   */
+  exports.prototype['Options'] = undefined;
 
 
 

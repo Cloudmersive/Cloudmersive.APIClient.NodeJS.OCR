@@ -36,7 +36,7 @@
   /**
    * The PhotoToWordsWithLocationResult model module.
    * @module model/PhotoToWordsWithLocationResult
-   * @version 1.2.9
+   * @version 1.3.0
    */
 
   /**

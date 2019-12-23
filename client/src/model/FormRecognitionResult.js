@@ -36,7 +36,7 @@
   /**
    * The FormRecognitionResult model module.
    * @module model/FormRecognitionResult
-   * @version 1.2.9
+   * @version 1.3.0
    */
 
   /**

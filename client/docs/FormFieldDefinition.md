@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **targetFieldHorizontalAdjustment** | **Number** | Optional - horizontal adjestment in relative width of the field | [optional] 
 **targetFieldVerticalAdjustment** | **Number** | Optional - vertical adjestment in relative height of the field | [optional] 
 **ignore** | **[String]** | Optional - Ignore any result items that contain a partial or complete match with these text strings | [optional] 
+**options** | **String** | Optional - additional options that can be set for this field definition, separated by commas.  Possible values are AllowMultiMatch (allow the same anchor to be matched to multiple fields) | [optional] 
 
 
