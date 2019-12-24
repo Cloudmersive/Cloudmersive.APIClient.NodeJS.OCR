@@ -36,7 +36,7 @@
   /**
    * The TableRowResult model module.
    * @module model/TableRowResult
-   * @version 1.3.0
+   * @version 1.3.1
    */
 
   /**
