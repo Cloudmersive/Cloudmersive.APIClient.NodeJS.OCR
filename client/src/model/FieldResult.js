@@ -36,7 +36,7 @@
   /**
    * The FieldResult model module.
    * @module model/FieldResult
-   * @version 1.3.1
+   * @version 1.3.2
    */
 
   /**

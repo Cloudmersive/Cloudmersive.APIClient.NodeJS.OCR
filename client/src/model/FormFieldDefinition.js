@@ -36,7 +36,7 @@
   /**
    * The FormFieldDefinition model module.
    * @module model/FormFieldDefinition
-   * @version 1.3.1
+   * @version 1.3.2
    */
 
   /**
