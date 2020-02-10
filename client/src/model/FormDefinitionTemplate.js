@@ -36,7 +36,7 @@
   /**
    * The FormDefinitionTemplate model module.
    * @module model/FormDefinitionTemplate
-   * @version 1.3.2
+   * @version 1.3.3
    */
 
   /**

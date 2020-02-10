@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property alternateAnchor (base name: "AlternateAnchor")', function() {
+      // uncomment below and update the code to test the property alternateAnchor
+      //var instane = new CloudmersiveOcrApiClient.FormFieldDefinition();
+      //expect(instance).to.be();
+    });
+
     it('should have the property anchorMode (base name: "AnchorMode")', function() {
       // uncomment below and update the code to test the property anchorMode
       //var instane = new CloudmersiveOcrApiClient.FormFieldDefinition();

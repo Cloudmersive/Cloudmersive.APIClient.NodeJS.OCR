@@ -36,7 +36,7 @@
   /**
    * The FormFieldDefinition model module.
    * @module model/FormFieldDefinition
-   * @version 1.3.2
+   * @version 1.3.3
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -89,6 +90,9 @@
       }
       if (data.hasOwnProperty('BottomAnchor')) {
         obj['BottomAnchor'] = ApiClient.convertToType(data['BottomAnchor'], 'String');
+      }
+      if (data.hasOwnProperty('AlternateAnchor')) {
+        obj['AlternateAnchor'] = ApiClient.convertToType(data['AlternateAnchor'], 'String');
       }
       if (data.hasOwnProperty('AnchorMode')) {
         obj['AnchorMode'] = ApiClient.convertToType(data['AnchorMode'], 'String');
@@ -153,6 +157,11 @@
    * @member {String} BottomAnchor
    */
   exports.prototype['BottomAnchor'] = undefined;
+  /**
+   * Optional - alterate match text for the specified anchor
+   * @member {String} AlternateAnchor
+   */
+  exports.prototype['AlternateAnchor'] = undefined;
   /**
    * Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial.
    * @member {String} AnchorMode

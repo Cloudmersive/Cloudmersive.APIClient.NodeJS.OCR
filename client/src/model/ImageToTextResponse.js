@@ -36,7 +36,7 @@
   /**
    * The ImageToTextResponse model module.
    * @module model/ImageToTextResponse
-   * @version 1.3.2
+   * @version 1.3.3
    */
 
   /**
