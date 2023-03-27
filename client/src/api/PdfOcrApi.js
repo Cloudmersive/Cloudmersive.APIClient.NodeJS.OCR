@@ -33,7 +33,7 @@
   /**
    * PdfOcr service.
    * @module api/PdfOcrApi
-   * @version 1.3.3
+   * @version 2.0.1
    */
 
   /**
@@ -46,6 +46,53 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+    /**
+     * Callback function to receive the result of the pdfOcrGetAsyncJobStatus operation.
+     * @callback module:api/PdfOcrApi~pdfOcrGetAsyncJobStatusCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PdfToTextResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns the result of the Async Job - possible states can be STARTED or COMPLETED
+     * @param {String} asyncJobID 
+     * @param {module:api/PdfOcrApi~pdfOcrGetAsyncJobStatusCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PdfToTextResponse}
+     */
+    this.pdfOcrGetAsyncJobStatus = function(asyncJobID, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'asyncJobID' is set
+      if (asyncJobID === undefined || asyncJobID === null) {
+        throw new Error("Missing the required parameter 'asyncJobID' when calling pdfOcrGetAsyncJobStatus");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'AsyncJobID': asyncJobID,
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Apikey'];
+      var contentTypes = [];
+      var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
+      var returnType = PdfToTextResponse;
+
+      return this.apiClient.callApi(
+        '/ocr/pdf/get-job-status', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the pdfOcrPdfToLinesWithLocation operation.
@@ -167,7 +214,7 @@
      * Converts an uploaded PDF file into text via Optical Character Recognition.
      * @param {File} imageFile PDF file to perform OCR on.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.recognitionMode Optional; possible values are &#39;Basic&#39; which provides basic recognition and is not resillient to page rotation, skew or low quality images uses 1-2 API calls per page; &#39;Normal&#39; which provides highly fault tolerant OCR recognition uses 14-16 API calls per page; and &#39;Advanced&#39; which provides the highest quality and most fault-tolerant recognition uses 28-30 API calls per page.  Default recognition mode is &#39;Basic&#39;
+     * @param {String} opts.recognitionMode Optional; possible values are &#39;Basic&#39; which provides basic recognition and is not resillient to page rotation, skew or low quality images uses 1-2 API calls per page; &#39;Normal&#39; which provides highly fault tolerant OCR recognition uses 26-30 API calls per page; and &#39;Advanced&#39; which provides the highest quality and most fault-tolerant recognition uses 28-30 API calls per page.  Default recognition mode is &#39;Basic&#39;
      * @param {String} opts.language Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish)
      * @param {String} opts.preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image before OCR is applied; this is recommended).
      * @param {module:api/PdfOcrApi~pdfOcrPostCallback} callback The callback function, accepting three arguments: error, data, response

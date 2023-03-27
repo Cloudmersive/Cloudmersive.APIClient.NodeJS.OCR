@@ -36,7 +36,7 @@
   /**
    * The PdfToTextResponse model module.
    * @module model/PdfToTextResponse
-   * @version 1.3.3
+   * @version 2.0.1
    */
 
   /**
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -69,6 +71,12 @@
       if (data.hasOwnProperty('OcrPages')) {
         obj['OcrPages'] = ApiClient.convertToType(data['OcrPages'], [OcrPageResult]);
       }
+      if (data.hasOwnProperty('AsyncJobID')) {
+        obj['AsyncJobID'] = ApiClient.convertToType(data['AsyncJobID'], 'String');
+      }
+      if (data.hasOwnProperty('AsyncJobStatus')) {
+        obj['AsyncJobStatus'] = ApiClient.convertToType(data['AsyncJobStatus'], 'String');
+      }
     }
     return obj;
   }
@@ -83,6 +91,16 @@
    * @member {Array.<module:model/OcrPageResult>} OcrPages
    */
   exports.prototype['OcrPages'] = undefined;
+  /**
+   * When the job exceeds 25 pages, an Async Job ID is returned.  Use the CheckPdfOcrJobStatus API to check on the status of this job using the AsyncJobID and get the result when it finishes
+   * @member {String} AsyncJobID
+   */
+  exports.prototype['AsyncJobID'] = undefined;
+  /**
+   * Returns the job status of the Async Job, if applicable.  Possible states are STARTED and COMPLETED
+   * @member {String} AsyncJobStatus
+   */
+  exports.prototype['AsyncJobStatus'] = undefined;
 
 
 

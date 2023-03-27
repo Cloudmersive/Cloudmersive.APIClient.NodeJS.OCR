@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api) provides advanced machine learning capabilities for converting scanned documents and photos of documents and receipts to text.
 
 - API version: v1
-- Package version: 1.3.3
+- Package version: 2.0.1
 
 
 ## Installation
@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
 *CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrPhotoToText**](docs/ImageOcrApi.md#imageOcrPhotoToText) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrPhotoWordsWithLocation**](docs/ImageOcrApi.md#imageOcrPhotoWordsWithLocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
 *CloudmersiveOcrApiClient.ImageOcrApi* | [**imageOcrPost**](docs/ImageOcrApi.md#imageOcrPost) | **POST** /ocr/image/toText | Convert a scanned image into text
+*CloudmersiveOcrApiClient.PdfOcrApi* | [**pdfOcrGetAsyncJobStatus**](docs/PdfOcrApi.md#pdfOcrGetAsyncJobStatus) | **GET** /ocr/pdf/get-job-status | Returns the result of the Async Job - possible states can be STARTED or COMPLETED
 *CloudmersiveOcrApiClient.PdfOcrApi* | [**pdfOcrPdfToLinesWithLocation**](docs/PdfOcrApi.md#pdfOcrPdfToLinesWithLocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 *CloudmersiveOcrApiClient.PdfOcrApi* | [**pdfOcrPdfToWordsWithLocation**](docs/PdfOcrApi.md#pdfOcrPdfToWordsWithLocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
 *CloudmersiveOcrApiClient.PdfOcrApi* | [**pdfOcrPost**](docs/PdfOcrApi.md#pdfOcrPost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.

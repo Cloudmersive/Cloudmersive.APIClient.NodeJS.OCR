@@ -50,6 +50,16 @@
   }
 
   describe('PdfOcrApi', function() {
+    describe('pdfOcrGetAsyncJobStatus', function() {
+      it('should call pdfOcrGetAsyncJobStatus successfully', function(done) {
+        //uncomment below and update the code to test pdfOcrGetAsyncJobStatus
+        //instance.pdfOcrGetAsyncJobStatus(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('pdfOcrPdfToLinesWithLocation', function() {
       it('should call pdfOcrPdfToLinesWithLocation successfully', function(done) {
         //uncomment below and update the code to test pdfOcrPdfToLinesWithLocation

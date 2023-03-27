@@ -68,6 +68,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property asyncJobID (base name: "AsyncJobID")', function() {
+      // uncomment below and update the code to test the property asyncJobID
+      //var instane = new CloudmersiveOcrApiClient.PdfToTextResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property asyncJobStatus (base name: "AsyncJobStatus")', function() {
+      // uncomment below and update the code to test the property asyncJobStatus
+      //var instane = new CloudmersiveOcrApiClient.PdfToTextResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
